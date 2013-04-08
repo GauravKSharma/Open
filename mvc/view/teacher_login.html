@@ -1,0 +1,54 @@
+<!--   --------------------------
+            Teacher login
+       --------------------------
+ -->
+
+
+<html>
+    <title>Teacher Login</title>
+    <head>
+        <link href="overlay-apple.css" rel="stylesheet" type="text/css">
+            
+            <script>
+             
+            </script>
+        
+    </head>
+    
+   <body>
+    <div id="overlay" class="apple_overlay" style="position: fixed; z-index: 30000; background-image: none; top: 155px; left: 324px; right: 324px; display: block;">
+        <a class="close" href="index.php" style="float:right;"><img src="images/close.png" alt="close" height="40px" width="40px"></a>
+     <div class="contentWrap" style="background-color:#6495ED;height:400px;">
+    
+     
+     <hr/>
+    <form action="http://localhost/Open/trunk/mvc/controller/controller.php?method=login" method="post">
+     <pre/>
+     <div style="margin-left:190px;width:300px;border:0px solid red;">
+     <table align="center">
+     <tr>
+     	<td align="center"><h5>UserName</h5></td>
+     	
+    </tr>
+    <tr>
+     	
+     	<td><input type="text" name="u_name"></td>
+    </tr>
+     <tr>
+     	<td align="center"><h5>Password</h5></td>
+    </tr>
+    <tr>
+     	<td><input type="password" name="pwd" id="pwd"/></td>
+    </tr>
+     </table>
+    </div>
+    <input type="checkbox">Remember Password<br/>
+    <a href="forgotPassword.php">Forgot Password?</a><br/>
+<input type="hidden" name='user_type' value="teacher">
+    <input type="submit" value="Login">
+    </form>
+    
+    </div>
+    </div>
+   </body>
+</html>   
