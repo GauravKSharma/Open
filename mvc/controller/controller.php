@@ -657,11 +657,11 @@ public function feedback() {
                     header("location:../view/testInstructions.php");
                 }
                 else {
-                    $header = header ( "location:../index.php" );
+                    $header = header ( "location:../mainpage.php" );
                 }
             }
         } else {
-            header ( "location:../index.php" );
+            header ( "location:../mainpage.php" );
         }
     }
 /* --------------------------------------------------------------
