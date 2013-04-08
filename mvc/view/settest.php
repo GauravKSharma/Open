@@ -1,5 +1,5 @@
 <?php session_start();
-session['slectedtestcat']=$row['category_id'];?>
+$_SESSION['slectedtestcat']=$row['category_id'];?>
 
 <html>
  

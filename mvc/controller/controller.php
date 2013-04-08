@@ -649,9 +649,9 @@ public function feedback() {
                 $result = $login->resultlogin();
                
                 if ($result [0]['user_type'] == 2 && $_POST ['user_type'] == "teacher") {
-                  header("location:../view/view.php?flag=2");
+                  header("location:../user/2");
                   } else if ($result [0]['user_type'] == 3 && $_POST ['user_type'] == "student") {
-                    header("location:../view/view.php?flag=3");
+                    header("location:../user/3");
                 }
                 else if ($result [0]['user_type'] == 3 && $_POST ['type'] == "test") {
                     header("location:../view/testInstructions.php");
