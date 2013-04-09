@@ -1,21 +1,14 @@
-de<html>
+<html>
  
  <head>
   <title>View Test Paper</title>
    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
    
-   <link rel="stylesheet" type="text/css"
-        href="../css/scroll1.css"/>
-
-  <link rel="stylesheet" type="text/css"
-      href="../css/scroll.css?v=5" />
-
  </head>
 
 <body>
 <div id="actions">
-  <a class="prev">&laquo; Back</a>
-  <a class="next">More Questions &raquo;</a>
+  
 </div>
 <form action="../view/testResult.php" method="get"> 
 <div class="scrollable vertical">

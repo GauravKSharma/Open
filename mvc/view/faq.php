@@ -1,3 +1,10 @@
+<?php 
+if(isset($_REQUEST['msg'])){
+	echo '<script type="text/javascript">alert("Wrong Category Selected"); </script>';
+}
+unset($_REQUEST['msg']);
+?>
+
 
 <html>
  
@@ -27,17 +34,29 @@
  </head>
  
  <body>
-     <table>
+ <?php include 'header1.php'; ?>
+   <table>
+     <tr>
+      <td>
+      <?php 
+      if(isset($_SESSION['msgErrors'])){
+      foreach($_SESSION['msgErrors'] as $key=>$value){
+       print_r($_SESSION['msgErrors'][$key]); 
+       }
+      }
+      unset($_SESSION['msgErrors']);
+      ?>
+      </td><td></td>
+     </tr>
      <tr>
      <td>
-     
      <form action="../controller/controller.php?method=addQuestion" method="POST">    
       Add your Query ?
          <textarea rows="" cols="20" name="question" required="required"></textarea>
       Select Category
-         <input type="text" name="category" required="required">
+         <input type="number" name="category" />
          <a href="#" onclick="openwindow();"> View Category Code </a><br/>
-     <pre/>                          <input type="Submit" value="Add Query"/>
+                          <input type="Submit" value="Add Query"/>
      </form>
      </td>
     </tr>

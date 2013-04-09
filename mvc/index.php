@@ -3,6 +3,10 @@ session_start();
 $_SESSION['basepath']='http://localhost/../../';
 
 //session_start();
+if(isset($_REQUEST['msg'])){
+    echo '<script type="text/javascript">alert("Feedback Recorded"); </script>';
+}
+unset($_REQUEST['msg']);
 if(isset($_SESSION['uname'])){
  header("Location:view/view.php?flag=".$_SESSION['flag']);
 }
@@ -363,7 +367,7 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
             <?php if(isset($_SESSION["msgErrors"][1])) {?>
             <label style="font-size:8px; background-color: red;"><?php print_r($_SESSION["msgErrors"][1]); ?></label> 
 	    <?php } 
-            session_unset("msgErrors");
+           unset($_SESSION["msgErrors"]);
             ?>
         </fieldset>
         <fieldset>
@@ -438,4 +442,3 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
 
  <div title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><img src="images/up.png"></div></body></html>
 
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>

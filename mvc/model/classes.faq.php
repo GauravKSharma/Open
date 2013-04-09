@@ -54,15 +54,17 @@ class faqResponse extends model {
 		$value = $_REQUEST ['value'];
 		$ress = '';
 		$this->db->fields ( array (
-                                "users.firstname",
+                "users.firstname",
 				"faq.faq_question",
-				"faq.id" 
+				"faq.category_id" 
 		) );
                 $this->db->From ( "faq" );
-		$this->db->join ( "users", "faq.category_id=$value and faq.user_id=users.id" );
+		$this->db->join ( "users","faq.user_id = users.id");
+		$this->db->Where ( array ("category_id" => $value) );
 		
+	
 		$resul = $this->db->Select ();
-                //echo $this->db->lastQuery();die;
+               // echo $this->db->lastQuery();die;
 		
 		while ( $row = mysql_fetch_assoc ( $resul ) ) {
 			$ress .= "<img src='../images/400-myprofile.png' height=50px width=60px>";
@@ -72,12 +74,13 @@ class faqResponse extends model {
                         $ress .= "<br/>";
                         $ress .= "Ques : ";
                         $ress .= $row ['faq_question'];
-			$faqid = $row ['id'];
+			$faqid = $row ['category_id'];
 			$this->db->fields ( array (
 					"response" 
 			) );
 			$this->db->from ( "faq_response where faq_id=$faqid" );
 			$sql = $this->db->Select ();
+			//echo $this->db->lastQuery();die;
 			$ress .= "<br/>";
 			$ress .= "<br/>";
 			$ress .= "<br/>";
@@ -91,7 +94,7 @@ class faqResponse extends model {
 			$ress .= "<br/>";
 			$ress .= "<form action='../controller/controller.php?method=response' method='post'> ";
 			$ress .= "<textarea name='message' rows='8' cols='40' required='required'></textarea><br/>";
-			$ress .= "<input type='hidden' value=" .$row['id'] . " name='faqId'>";
+			$ress .= "<input type='hidden' value=" .$row['category_id'] . " name='faqId'>";
 			$ress .= "<pre>";
 			$ress .= "<input type='submit' value='Add Comments'>";
 			$ress .= "</pre>";
@@ -153,12 +156,13 @@ class faqResponse extends model {
 		) );
 			
 		$this->db->From ( 'faq' );
-		$rowAffected= $this->db->Insert ();
-		//echo $this->db->lastQuery();die;
-		if ($rowAffected) {
+		
+		if ($this->db->Insert ()) {
 			return 1;
+			
 		} else {
 			return 0;
+			
 		}
 		
 	}

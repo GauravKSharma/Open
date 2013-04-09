@@ -25,8 +25,9 @@ class result extends model{
 					 
 			) );
 			
-			return $this->db->Select();
-			//echo $this->db->lastQuery();
+			$this->db->Select();
+			return $this->db->resultArray();
+                        //echo $this->db->lastQuery();
 		}
         public function viewTestId() {
             $this->db->Fields ( array (

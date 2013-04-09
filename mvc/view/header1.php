@@ -7,7 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <head>
-
+<script src="../fancybox/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {	
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+    $("#changes").fancybox({
+            'width'            : width/2 ,
+            'height'        : height/2-170,
+            'autoScale'        : false,
+            'transitionIn'        : 'none',
+            'transitionOut'        : 'none',
+            'type'            : 'iframe',
+            'overlayColor': 'white',
+            'margin':'180'
+    });
+});
+</script>
 <style>
 
 li {
@@ -44,16 +60,20 @@ li a:hover {
 <link href="../css/css.css" rel="stylesheet" type="text/css">
 
 <!-- Favicons -->
-<link href="http://www.examprofessor.com/images/favicon.ico" rel="shortcut icon">
-<link href="http://www.examprofessor.com/images/apple-touch-icon.png" rel="apple-touch-icon">
-<link href="http://www.examprofessor.com/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-<link href="http://www.examprofessor.com/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="../images/favicon.ico" rel="shortcut icon">
+<link href="../images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="../images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
 
 <!-- JS -->
 <script src="../html/ga.html" async="" type="text/javascript"></script><script async="" type="text/javascript" src="../js/webfont.js"></script><script src="../js/all-ae90ca9b060d344fdbfb877cc59dfaa4.js" type="text/javascript"></script>
 <link href="css/css_004.css" rel="stylesheet">
-<script id="twitterlib1362133953873" src="../html/user_timeline.html"></script></head>
+<script id="twitterlib1362133953873" src="../html/user_timeline.html"></script>
+<link href="../fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css">
+<script src="../fancybox/jquery.fancybox-1.3.4.js"></script>
+<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
+</head>
 <body class="body js-enabled">
   
 
@@ -70,9 +90,10 @@ li a:hover {
 
              <div id=12345 style="height:30px;width:35%; float:right;">  
              <ul id="main-nav-menu" class="nav-menu">
-		        <li id="nav-home"><a href="changepassword.php" style="color: white">Change Password |</a></li>
+		        <li id="nav-home"><a href="../view/changepassword.php" id="changes" style="color: white;">Change Password |</a></li>
+		       
 		        <li id="nav-tour"><a href="../controller/controller.php?method=update" onclick="update()" style="color: white">Profile Update|</a></li>
-		        <li><a href="logout.php" style="color: white">Log Out</a></li>
+		        <li><a href="../view/logout.php" style="color: white">Log Out</a></li>
 			</ul>
 							
 						

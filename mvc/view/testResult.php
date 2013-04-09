@@ -4,11 +4,13 @@ $get=$_SESSION['get'];
 //print_r($get);
 foreach($get as $key=>$values)
 	$correctAns[]=$get[$key]['answer'];
-
+//    print_r($category);
 foreach ($correctAns as $key=>$values){
+       
+       //echo ($values['options']);
 	$options="options".$key;
 	echo "<pre>";
-	echo 'Ques ;'.($key+1).$get[$key]['question_name']."</pre>";
+	echo 'Ques :'.($key+1).$get[$key]['question_name']."</pre>";
 	if($values==$_REQUEST[$options]){
 		echo "<p style='color:green'>Correct Answer</p>";
 	}

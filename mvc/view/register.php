@@ -1,14 +1,16 @@
 <?php
 session_start();
 
-if($_REQUEST['msg']){
+if(isset($_REQUEST['msg'])){
     echo '<script type="text/javascript">alert("User Name Already Exists"); </script>';
 }
+unset($_REQUEST['msg']);
 ?>
 
 <html>
     
     <head><title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="../css/test.css" />
         <script src="../js/jquery.min.js"></script>
 <script src="../js/md5.js"></script>
 
@@ -33,6 +35,23 @@ if($_REQUEST['msg']){
 	color: #0099CC;
     }
     
+ form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	margin: 160px auto;
+	text-align: center;
+	width: 600px;
+	-moz-border-radius: 4px;
+     
+    background-image: url(../images/bkg-plans.png);
+ 	background-repeat:no-repeat;
+   background-size: 1600px;
+        
+       
+        
+}
+    
     </style>
     <script>
         function checkUnique(){
@@ -52,7 +71,7 @@ if($_REQUEST['msg']){
     </head>
     
    <body>
-       
+        <div  style="height:30px;width:100%;margin-top: 8px;background-color:#383838 ;"><br/><br/>
        <div>
 <?php         
     if(isset($_SESSION['msgErrors'])){
@@ -63,39 +82,42 @@ if($_REQUEST['msg']){
 ?>
        </div>
        
-       <div>
- <form id="myform" class="cols" action="../controller/controller.php?method=user_register" method="post">
-      <h1>Login Information</h1><br/>
-      UserName*  <input type="text" name="u_name" required="required" minlength="6" onBlur="checkUnique()"/>
-      <label id="tab3" style="margin-left:10px; font-size:14px; border:1px;"></label><br/>
-      User Type <select name="utype">
+      
+     <form  id="myform" class="expose" action="../controller/controller.php?method=user_register" method="post">
+      <div style="background-image: url(../images/professor-checklist-72.png); background-repeat: no-repeat;width:600px;height:600px; ">
+      <table align="right" width="350px">
+      <tr><td>UserName*</td><td><input type="text" name="u_name" required="required" minlength="6" onBlur="checkUnique()"/>
+      <label id="tab3" style="margin-left:10px; font-size:14px; border:1px;"></label></td></tr>
+      <tr><td>User Type</td> <td><select name="utype">
       <option value="2">Teacher</option>
       <option value="3">Student</option>
-      </select>
-      <br/>
-       <h1>Personal Information</h1><br/>
-       First Name*  <input type="text" name="first" required="required" maxlength="30" /><br/> 
-       Last Name*   <input type="text" name="last" required="required" maxlength="10" /><br/>
-       Address     <textarea rows="4" cols="30" name="address"></textarea><br/>
-       Email*      <input type="email" name="email" required="required" /><br/> 
-       DOB         <input type="date" name="dob"><br/>
-       Phone No    <input type="number" name="phone" maxlength="10" /><br/>
-       Gender*     <input type="radio" value="male" name="gender">Male 
-       <input type="radio" value="female" name="gender">Female<br/>
-      College/Company Name* <input type="text" name="cname"><br/>
-      <div class="lines" id="capref">
-      <img src="captcha.php" class="form_captcha" id="image"/>
-            Verification (Type what you see):
-            <input type="text" name="captcha" value="" class="captcha" id="captcha" onblur="checkCaptcha();" required="required"/>
+      </select></td></tr>
+      
+      
+       <tr><td>First Name*</td>  <td><input type="text" name="first" required="required" maxlength="30" /></td></tr> 
+       <tr><td>Last Name*</td>   <td><input type="text" name="last" required="required" maxlength="10" /></td></tr>
+       <tr><td>Address</td>     <td><textarea rows="4" cols="30" name="address"></textarea></td></tr>
+       <tr><td>Email*</td>      <td><input type="email" name="email" required="required" /></td></tr> 
+       <tr><td>DOB</td>         <td><input type="date" name="dob"></td></tr>
+       <tr><td>Phone No</td>    <td><input type="number" name="phone" maxlength="10" /></td></tr>
+       <tr><td>Gender*</td>     <td><input type="radio" value="male" name="gender">Male</td></tr> 
+       <tr><td></td><td><input type="radio" value="female" name="gender">Female</td></tr>
+      <tr><td>College/Company Name*</td> <td><input type="text" name="cname"></td></tr>
+      <tr><td><div class="lines" id="capref"></td>
+      <td><img src="captcha.php" class="form_captcha" id="image"/></td></tr>
+            <tr><td>Verification (Type what you see):</td>
+            <td><input type="text" name="captcha" value="" class="captcha" id="captcha" onblur="checkCaptcha();" required="required"/></td></tr>
 </div>
             <!--            <button onclick="checkCaptcha()">Check it</button>-->
-<p id="caperror" onshow="referesh();" ></p>
+<tr><td><p id="caperror" onshow="referesh();" ></p></td></tr>
       <div class="clear"></div>
       
-     <button type="submit" name="teacher">Submit</button>
+     <tr><td></td><td><button type="submit" name="teacher" style="background-color: #909090;height: 30px;width:100px;color: white;font-size: 15px;">Register</button></td></tr>
+     </table>
+         </div>
     </form>
     
-    </div>
+
 
           </body>
 </html>    

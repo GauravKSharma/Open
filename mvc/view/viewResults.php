@@ -1,4 +1,5 @@
 
+
 <html>
 <head>
     <title>View Result</title>
@@ -14,18 +15,16 @@
        </tr>
     <?php 
      
-    while($row=mysql_fetch_assoc($fetchResult)){ ?>
-      <tr>   
-        <td><?php echo ($row['test_id']); ?></td>
-        <td><?php echo ($row['marks']); ?></td>
-        <td><?php echo ($row['percentage']); ?></td>
+    foreach($fetchResult as $key=>$value){ ?>
+
+       <tr>   
+        <td style="font-color:red;"><?php echo ($value['test_id']); ?></td>
+        <td style="font-color:red;"><?php echo ($value['marks']); ?></td>
+        <td style="font-color:red;"><?php echo ($value['percentage']); ?></td>
       </tr>
         <?php }?>  
      </table>
-        <div id="tab3">
-    
-    </div> 
- </body>
+  </body>
  
 </html>
 

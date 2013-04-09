@@ -1,5 +1,4 @@
-<?php session_start();
-$_SESSION['slectedtestcat']=$row['category_id'];?>
+
 
 <html>
  
@@ -32,8 +31,6 @@ a:FOCUS {
         <td><?php echo ($row['category_id']); ?></td>
         <td><?php echo ($row['no_questions']); ?></td>
         <td><?php echo ($row['created_on']); ?></td>
-        <td><a href="../controller/controller.php?method=updateQuestion&cat=<?php echo ($row['category_id']); ?>&id=<?php echo ($row['id']); ?>">Update</td>
-        
     </tr>
         <?php }?>
     </table>            

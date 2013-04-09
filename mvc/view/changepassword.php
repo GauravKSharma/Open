@@ -1,95 +1,51 @@
 <?php
 session_start();
 if(isset($_REQUEST['msg'])){
-	echo '<script type="text/javascript">alert("Wrong Password"); </script>';
-	$_REQUEST['msg']="";
+		echo '<script type="text/javascript">alert("Wrong Current Password"); </script>';
 }
-
-?>
-    
+unset($_REQUEST['msg']);
+?>   
 <html>
 <head>
 <title>Change Password</title>
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-<script type="text/javascript"
-	src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.validate.js"></script>
-
-<style>
-#exposeMask {
-	background: #678 url(/media/img/mask/mask_gradient_1000.png) no-repeat;
-	background-position: 13% 160px;
-}
-
-form.expose {
-	border: 1px outset #ccc;
-	background: #fff url(/media/img/gradient/h150.png) repeat-x;
-	padding: 20px;
-	margin: 20px auto;
-	text-align: center;
-	width: 400px;
-	-moz-border-radius: 4px;
-}
-
-/* http://www.quirksmode.org/css/forms.html */
-label,input {
-	display: block;
-	width: 150px;
-	float: left;
-	margin-bottom: 10px;
-}
-
-label {
-	text-align: right;
-	width: 100px;
-	padding-right: 20px;
-}
-
-br {
-	clear: left;
-}
-</style>
 
 
 </head>
 
-<body>
+<body style=" background-image: url(../images/bkg-plans.png);background-repeat:no-repeat;height:400px;" >
 	
-		
-		<br />
-		<br />
-		<br />
-		<br />
-
-		<div>
-			<form class="expose" id="myform"
-				action="../controller/controller.php?method=changePassword" method="post">
-				<pre />
-                                <table>
-				<tr><tbody rowspan='2'><h2>Change Password</h2></tbody></tr>
-				<tr> <td>Current Password:</td> 
-                                     <td><input type="password" name="pwd" required="required"></td></tr>
-				<tr> <td>New Password:</td>
-                                     <td><input type="password" name="new_pwd" />
-                                     <?php if(isset($_SESSION["msgErrors"][0])) {?>
-                                     <label style="font-size:8px; background-color: red;"><?php print_r($_SESSION["msgErrors"][0]); ?></label> 
-	                             <?php } 
-                                     session_unset("msgErrors");
-                                     ?>
+	
+	<?php 
+   if(isset($_SESSION["msgErrors"])){
+     foreach($_SESSION["msgErrors"] as $key=>$value){
+         print_r($_SESSION["msgErrors"][$key]);
+     }
+    unset($_SESSION["msgErrors"]);
+ }?>
+   
+	<form action="../controller/controller.php?method=changePassword" method="POST">
+	<div style="background-image:url(../images/image02.png);background-repeat:no-repeat;height:400px;" >
+	
+				<table align="right" width:="300px";>
+				<tr><td><h2>Change Password</h2></td></tr>
+				<tr> <td>Current Password:</td></tr> 
+                                     <tr><td><input type="password" name="pwd" required="required"></td></tr>
+				<tr> <td>New Password:</td></tr>
+                                     <tr><td><input type="password" name="new_pwd" />
                                      </td></tr>
-				<tr><td>Confirm Password*:</td> 
-                                     <td><input type="password" name="check" id="check" data-equals="new_pwd" /></td></tr> 
+				<tr><td>Confirm Password*:</td></tr> 
+                                     <tr><td><input type="password" name="check" id="check" data-equals="new_pwd" /></td></tr> 
                                 <tr><td>&nbsp;</td>
                                 <td>&nbsp;</td></tr>
-                                <tr><td>&nbsp;</td>
-                                <td>&nbsp;</td></tr>
-                                <tr><td>&nbsp;</td>
-                                <td>&nbsp;</td></tr>
+                                
+                                
                                                                 
-                                <tr><td><input type="Submit" value="Save Changes"></td> 
-                                    <td></td></tr>
+                                <tr><td><input type="Submit" value="Change" style="background-color: #909090;height: 30px;width:100px;color: white;font-size: 15px;"></td> 
+                                    </tr>
                                 </table>
+                                </div>
 			</form>
-                    
+                   
                      
 
 

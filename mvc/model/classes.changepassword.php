@@ -35,11 +35,25 @@ public function UpdatePassword(){
 			}
 }
 public function CheckCurrentPassword(){
-    $this->db->From ( "users" );
-			$this->db->Where ( array (
-					"user_name" => $this->getUserName () 
+	       // $this->db->Feilds(array("password"));
+		    $this->db->From ( "users" );
+            $this->db->Where ( array (
+					"user_name" => $this->getUserName (), 
+            		"password" => $this->getPassword ()  
 			) );
-			return $this->db->Select ();
+			//return
+            $this->db->Select ();
+			if ($this->db->resultArray ()){
+				//echo "hi";
+				return 1;
+				//die;
+			}
+			else{
+				echo "hello";
+				return 0;
+				//die;
+			}
+			//echo $this->db->lastQuery ();die;
 		}
 
    

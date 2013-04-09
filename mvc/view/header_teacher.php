@@ -102,3 +102,12 @@ $("#tab2").html(data);
 
 </div>
 
+<?php if(isset($_REQUEST["upload"]) && $_REQUEST["upload"]=="1") {?>
+<SCRIPT>
+$(document).ready(function() {
+	upload();
+  });
+</SCRIPT>
+<?php } 
+unset($_REQUEST["upload"]);
+?>

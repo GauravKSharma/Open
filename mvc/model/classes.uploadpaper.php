@@ -123,7 +123,7 @@ class upload extends model{
 		
 		
 		if ($this->db->Insert () == 'true') {
-			echo $this->db->lastquery();
+			//echo $this->db->lastquery();
 			return 1;
 		} else {
 			return 0;

@@ -6,7 +6,7 @@ $route = array();
 
 class MyClass {
 	
-       public function checkcaptcha(){
+	public function checkcaptcha(){
            $original=$_SESSION["captcha"];
            $received=md5($_REQUEST["captchaval"]);
            if($original==$received){
@@ -16,9 +16,9 @@ class MyClass {
                echo 1;
            }
        }
-
-
-       /* -----------------------------------------------------
+	
+    
+    /* -----------------------------------------------------
          Function to add FAQ called from faq.php
        -----------------------------------------------------
     */
@@ -27,7 +27,7 @@ class MyClass {
 	
            if(isset($_SESSION['uname'])){
             require_once("../model/classes.validation.php");   
-	    require_once("../model/classes.faq.php");
+	        require_once("../model/classes.faq.php");
 	    
             
             $postQuestion=new faqResponse();
@@ -35,24 +35,28 @@ class MyClass {
             //session_unset("msgErrors");
             $_SESSION["msgErrors"] = array();
            
-          if(true){
-           
+      if($Validation->is_validInt($_REQUEST['category'])){
+          	           
 	    $postQuestion->setUsername($_SESSION['uname']);
 	    $postQuestion->setFaqquestion($_REQUEST['question']);
 	    $postQuestion->setCategory($_REQUEST['category']);
+	    $fetch = $postQuestion->postQuestion();
 	    
-	    if($postQuestion->postQuestion()){ 
-             header("location:controller.php?method=faq");
+	    if($fetch){ 
+	    	header("location:controller.php?method=faq");
 	    }
-	   }
-           else{
-             header("location:controller.php?method=faq");  
-           }
+	    	   
+        else{
+           header("location:controller.php?method=faq&msg='wrong category'");  
+         }
+      }   
 	}
 	else{
 	  header("location:../view/register.php");
 	 }
 	}
+	
+	
 	
 	public function response (){
 		if(isset($_SESSION['uname'])){
@@ -95,7 +99,7 @@ class MyClass {
 		$result = new result();
                 $result->setUserName($_SESSION['uname']);
                 $fetchResult = $result->viewResultStudent();
-                if(mysql_fetch_assoc($fetchResult)){
+                if($fetchResult){
                  include("../view/viewResults.php");
                     
                 }
@@ -107,71 +111,7 @@ class MyClass {
     
     
     
-    public function uploadQuestionSet(){
-        if(isset($_SESSION['uname'])){
-            require_once("../model/classes.uploadpaper.php");
-		$upload = new upload();
-		$upload->setUserName($_SESSION['uname']);
-	        $upload->setCategory($_REQUEST['category']);
-	        $upload->setQuessetid($_REQUEST['id']);
-	        $upload->setQuestion($_REQUEST['numbers']);
-			
-          if($upload->updateQuestionNumber())
-          {
-		  if($_FILES['userfile']['type'] == "text/csv"){
-		        if(isset($_POST['upload']) && $_FILES['userfile']['size'] > 0)
-                       {
-                        $fileName = $_FILES['userfile']['name'];
-                        $tmpName  = $_FILES['userfile']['tmp_name'];
-                        $fileSize = $_FILES['userfile']['size'];
-                        $fileType = $_FILES['userfile']['type'];
-                        $chk_ext = explode(",",$fileName);
-                       
-                       $handle = fopen($tmpName, "r");
-                       
-                         if(!$handle){
-                          die ('Cannot open file for reading');
-                        }      
-                  while (($data = fgetcsv($handle, 10000, ",")) !== FALSE){
-				    $upload->setQuestionName($data[0]);
-				    $upload->setQuessetid($nQuesSetId);
-				    $upload->setOption( array ($data[1],$data[2],$data[3],$data[4]) );
-				    $upload->setAnswer($data[5]);
-				    
-				    			   			    
-				    if($upload->uploadQuestionAnswer())
-				    {
-				    	    
-				    }
-				    else{
-				    echo '<script type="text/javascript">alert("Sorry Try Again"); </script>';
-			       }
-			       
-				
-			    }
-			    echo '<script type="text/javascript">alert("Upload Done"); </script>';
-              
-                       fclose($handle);                  
-                    }
-
-			   else{
-			   	echo '<script type="text/javascript">alert("Wrong Format"); </script>';
-			   }
-			}
-			else{
-		         echo '<script type="text/javascript">alert("Sorry"); </script>';
-			}
-          } 
-        }
-    }
-    
-    public function updateQuestion() {
-     if(isset($_SESSION['uname'])){
-       include("../view/updatetest.php");
-     }
-        
-    }
-        
+      
         /* -----------------------------------------------------
 	     Function called in case of forget password
 	   -----------------------------------------------------
@@ -263,10 +203,7 @@ class MyClass {
 		 
 		if(isset($_POST) > 0){
 			require_once("../model/classes.settest.php");
-			require_once("../model/classes.validation.php");
 			$settest = new settest();
-			$validation=new validate();
-			if($_POST['noofques']=$validation->is_validInt($_POST['negative'],$min=0,$max=5)){
 			$settest->setTeacher_name($_SESSION['uname']);
 			$settest->setTesttype($_POST['test']);
 			$settest->setNo_of_questions($_POST['noofques']);
@@ -312,11 +249,8 @@ class MyClass {
 			}
 			
 			}
-			else{
-				header('location:../view/selecttest.php');
-			}
 	}
-		}
+	
 
 	/* -----------------------------------------------------
 	      Function for View Faq
@@ -327,6 +261,7 @@ class MyClass {
 		if(isset($_POST) > 0){
 	        require_once("../model/classes.faq.php");
 		 $faqResponse=new faqResponse();
+		 //$faqResponse->$this->setUsername($_SESSION['uname']);
 		 $question=$faqResponse->viewFaq();
 		 if($question){
 		 	include("../view/faq_response.php");
@@ -442,14 +377,42 @@ class MyClass {
 	     if(isset($_POST) > 0){
 			require_once("../model/classes.uploadpaper.php");
 			$upload = new upload();
-				
-		        $upload->setUserName($_SESSION['uname']);
-			$upload->setCategory($_REQUEST['category']);
-			$upload->setQuestion($_REQUEST['numbers']);
+			    
 			
-			$nQuesSetId = $upload->uploadPaper();
+			///////////////////////
+			if($_FILES['userfile']['type'] == "text/csv"){
+				$count = 0;
+				if(isset($_POST['upload']) && $_FILES['userfile']['size'] > 0)
+				{
+					$fileName = $_FILES['userfile']['name'];
+					$tmpName  = $_FILES['userfile']['tmp_name'];
+					$fileSize = $_FILES['userfile']['size'];
+					$fileType = $_FILES['userfile']['type'];
+					$chk_ext = explode(",",$fileName);
+						
+					$handle = fopen($tmpName, "r");
 			
-			if ($nQuesSetId!="0"){
+					if(!$handle){
+						die ('Cannot open file for reading');
+							
+					}
+					while (($data = fgetcsv($handle, 10000, ",")) !== FALSE){
+						$upload->setQuestionName($data[0]);
+						$upload->setQuessetid($nQuesSetId);
+						$upload->setOption( array ($data[1],$data[2],$data[3],$data[4]) );
+						$upload->setAnswer($data[5]);
+						$count ++;
+					}
+			
+				}
+			}
+			echo $count;
+			////////////////////////////////////
+			
+			
+			if($count+1 == $_REQUEST['numbers']){
+			
+				if ($nQuesSetId!="0"){
 				if($_FILES['userfile']['type'] == "text/csv"){
 		        if(isset($_POST['upload']) && $_FILES['userfile']['size'] > 0)
                        {
@@ -473,25 +436,30 @@ class MyClass {
 				    			   			    
 				    if($upload->uploadQuestionAnswer())
 				    {
-				    	    
+			               	    	    
 				    }
 				    else{
-				    echo '<script type="text/javascript">alert("Sorry Try Again"); </script>';
+				    header("location:../view/view.php?flag=2&error='sorry'");
 			       }
 			       
 				
 			    }
-			    echo '<script type="text/javascript">alert("Upload Done"); </script>';
+			    header("location:../view/view.php?flag=2&msg='Uploaded'");
               
                         fclose($handle);                  
                     }
 			   }
 			   else{
-			   	echo '<script type="text/javascript">alert("Wrong Format"); </script>';
+			   	header("location:../view/view.php?flag=2&error='Sorry'");
 			   }
 			}
 			else{
-		         echo '<script type="text/javascript">alert("Sorry"); </script>';
+		         header("location:../view/view.php?flag=2&error='sorry'");
+			}
+			
+			}
+			else{
+				header("location:../view/view.php?flag=2&upload=1");
 			}
 		    }
         }
@@ -529,11 +497,12 @@ class MyClass {
     public function updateProfile() {
     	if(isset ($_POST['submit'])){
             
-                require_once("../model/classes.validation.php");
+            require_once("../model/classes.validation.php");
     		require_once("../model/classes.profileupdate.php");
     		$obj = new ProfileUpdate();
     		
                 $Validation = new validate();
+                //session_unset("msgErrors");
                 $_SESSION["msgErrors"] = array();
             
         if($Validation->is_validName($_POST["f_name"]) && $Validation->is_validEmail($_POST["email"]) && $Validation->is_validPhone($_POST["phone"])){  
@@ -564,12 +533,14 @@ class MyClass {
 */
     
     public function changePassword() {
-        if(isset ($_POST['submit'])) {
-            
+        if(isset ($_SESSION['uname'])) {
+        	print_r($_SESSION['uname']);
+            //echo "hi";die;
             require_once("../model/classes.validation.php");
             require_once("../model/classes.changepassword.php");
             
             $Validation = new validate();
+            //session_unset("msgErrors");
             $_SESSION["msgErrors"] = array();
             
             $changePassword = new ChangePassword();
@@ -578,25 +549,23 @@ class MyClass {
             $changePassword->setUserName($_SESSION['uname']);
             $get = $changePassword->CheckCurrentPassword();
             if ($get) {
-                
+            	
               if($Validation->is_validPassword($_POST["new_pwd"])){
 
-                $changePassword->setPassword($_POST["new_pwd"]);
-                if ($changePassword->UpdatePassword()) {
-                    header("location:../view/changepassword.php");
-                }
-                else{
-                    echo "hi";
-                }
+                 $changePassword->setPassword($_POST["new_pwd"]);
+                 if ($changePassword->UpdatePassword()) {
+                     header("location:../view/changepassword.php");
+                 }
               }
-              else{
-                  header("location:../view/changepassword.php");
-              }
-           }
-           else {
-               header("location:../view/changepassword.php?msg='wrong password'");
+               else{
+               	header("location:../view/changepassword.php");
+               }
+            }
+            else{
+            	header("location:../view/changepassword.php?msg='Wrong Entry'");
             }
         } 
+        
     }
     
 
@@ -621,7 +590,7 @@ public function feedback() {
            $feedback->setName($_POST["name"]);
          
            if (($feedback->AddFeedback())) {
-              header("location:..");
+              header("location:..?msg='Feedback Recorded'");
                }
            }
            else{
@@ -649,19 +618,19 @@ public function feedback() {
                 $result = $login->resultlogin();
                
                 if ($result [0]['user_type'] == 2 && $_POST ['user_type'] == "teacher") {
-                  header("location:../user/2");
+                  header("location:../view/view.php?flag=2");
                   } else if ($result [0]['user_type'] == 3 && $_POST ['user_type'] == "student") {
-                    header("location:../user/3");
+                    header("location:../view/view.php?flag=3");
                 }
                 else if ($result [0]['user_type'] == 3 && $_POST ['type'] == "test") {
                     header("location:../view/testInstructions.php");
                 }
                 else {
-                    $header = header ( "location:../mainpage.php" );
+                    $header = header ( "location:../index.php" );
                 }
             }
         } else {
-            header ( "location:../mainpage.php" );
+            header ( "location:../index.php" );
         }
     }
 /* --------------------------------------------------------------
@@ -670,8 +639,9 @@ public function feedback() {
  */
    
     public function checkUser() {
+    	
         if (isset($_POST) && count($_POST) > 0) {
-           require_once("../model/classes.register.php");
+        	require_once("../model/classes.register.php");
             $check = new Register();
             $check->setUserName($_POST ["u_name"]);
             $get=$check->checkUnique();
@@ -719,7 +689,7 @@ public function feedback() {
             $token = mt_rand();
             $_SESSION["msgErrors"] = array();
            
-           if($Validation->is_validName($_POST["first"]) && $Validation->is_validEmail($_POST["email"]) && $Validation->is_validPhone($_POST["phone"])&&(isset ($_SESSION['captchaerror']))&& $_SESSION['captchaerror']==0){
+           if($Validation->is_validName($_POST["first"]) && $Validation->is_validEmail($_POST["email"]) && $Validation->is_validPhone($_POST["phone"])){
             $obj->setUserName($_POST ["u_name"]);
             $obj->setPassword($token);
             $obj->setFirstName($_POST ["first"]);
