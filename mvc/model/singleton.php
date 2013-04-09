@@ -15,7 +15,7 @@ class DBConnection {
     private static $_host = "localhost";
     private static $_user = "root";
     private static $_password = "";
-    private static $_database = "onlineexam";
+    private static $_database = "oes";
     private $_tableName = "";
     private $_join = "";
     private $_where = "";
@@ -251,6 +251,7 @@ class DBConnection {
         $this->_values="";
         $this->_join="";
         $this->_where="";
+	//$this->_query="";
     return $this->_result;
     }
     

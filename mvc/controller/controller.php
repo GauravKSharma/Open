@@ -203,7 +203,9 @@ class MyClass {
 		 
 		if(isset($_POST) > 0){
 			require_once("../model/classes.settest.php");
+                        require_once("../model/classes.settest.php");
 			$settest = new settest();
+			if()
 			$settest->setTeacher_name($_SESSION['uname']);
 			$settest->setTesttype($_POST['test']);
 			$settest->setNo_of_questions($_POST['noofques']);
