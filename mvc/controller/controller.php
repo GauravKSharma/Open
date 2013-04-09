@@ -203,9 +203,12 @@ class MyClass {
 		 
 		if(isset($_POST) > 0){
 			require_once("../model/classes.settest.php");
-                        require_once("../model/classes.settest.php");
+                        require_once("../model/classes.validation.php");
+			$validate=new validate();
 			$settest = new settest();
-			if()
+                        $max=$_REQUEST['noq'];
+                        //echo $max;
+			if($validate->is_validInt($_POST['noofques'],1,$max) && $validate->is_validInt($_POST['time'],1,300) && $validate->is_validInt($_POST['negative'],-32767,0) && $validate->is_validEmail($_POST ["email"])){
 			$settest->setTeacher_name($_SESSION['uname']);
 			$settest->setTesttype($_POST['test']);
 			$settest->setNo_of_questions($_POST['noofques']);
@@ -251,6 +254,10 @@ class MyClass {
 			}
 			
 			}
+                        else{
+                            header('location:http://localhost/Open/trunk/mvc/view/view.php?flag=2');
+                        }
+}
 	}
 	
 

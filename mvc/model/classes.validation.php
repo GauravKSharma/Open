@@ -20,7 +20,7 @@ class validate{
 		}
 		else
 		{
-			return $int;
+			return true;
 		}
 		 
 	}
@@ -143,7 +143,7 @@ public function is_validEmail($email){
 	public function is_validPhone($phone){
 		$phone=filter_var($phone, FILTER_SANITIZE_STRING);
 		if(preg_match("/^[7-9][0-9]{9}$/", $phone) == 0){
-			$_SESSION["msgErrors"][]= '<p class="errText">Phone Number must  comply with this mask: first digit greater than 6 and number must be 10 digits.</p>';
+			$_SESSION["msgErrors"]['int']= '<p class="errText">Phone Number must  comply with this mask: first digit greater than 6 and number must be 10 digits.</p>';
 			
 			return false;
 	}
@@ -155,4 +155,5 @@ public function is_validEmail($email){
 
 }
 }
+
 ?>

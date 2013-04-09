@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/test.css" />
@@ -53,18 +56,21 @@
 </div><br/><br/><br/>
 <form class="expose" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=settest" method="POST">
 <div style="background-image: url(../images/professor-at-desk.png); background-repeat: no-repeat;height:600px;width:600px; ">
+<?php if(isset($_SESSION["msgErrors"]['int']))
+    echo $_SESSION["msgErrors"]['int'];?>    
 <table align="right">
 
-<tr><td>No Of Questions:</td></tr><tr><td><input type="number" name="noofques" required="required"/></td></tr>
+<tr><td>No Of Questions:</td></tr><tr><td><input type="number" name="noofques" required="required" min="1" max="<?php echo $_REQUEST['noq']?>"/></td></tr>
 
-<tr><b><td>Negative Marking(if required):</td></b></tr><tr><td><input type="number" name="negative" value="0" required="required"></td></tr>
-<tr><b><td>Time(in min):</td></b></tr><tr><td><input type="text" name="time" required="required"></td></tr>
+<tr><b><td>Negative Marking(if required):</td></b></tr><tr><td><input type="number" name="negative"  required="required" max="-1" min="-32767"></td></tr>
+<tr><b><td>Time(in min):</td></b></tr><tr><td><input type="text" name="time" required="required" min="1" max="300"></td></tr>
 <tr><b><td>Order</td></b></tr><tr><td><input type="radio" value="1" name="test" required="required">random</td></tr>
 <tr><td><input type="radio" value="2" name="test" required="required">sequential</td></tr>
-<tr><b><td>Mail Link To</td></b></tr><tr><td><input type="text" name="email" required="required"></td></tr>
+<tr><b><td>Mail Link To</td></b></tr><tr><td><input type="email" name="email" required="required"></td></tr>
 
 <tr><b><td><input type="submit" value="Set" style="background-color: #909090;height: 30px;width:100px;color: white;font-size: 15px;"></td></b></tr>
 <tr><td><input type="hidden" name="cat" value="<?php echo $_REQUEST['cat']?>" ></td></tr>
+<tr><td><input type="hidden" name="noq" value="<?php echo $_REQUEST['noq']?>" ></td></tr>
 </table>
 </div>
 </form>
