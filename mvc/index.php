@@ -17,51 +17,27 @@ if(isset($_SESSION['uname'])){
 
 
 ?>
-
-<script src="../fancybox/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-$(function() {	
-	var width = window.innerWidth;
-	var height = window.innerHeight;
-    $("#forgot").fancybox({
-            'width'            : width/2 ,
-            'height'        : height/2-170,
-            'autoScale'        : false,
-            'transitionIn'        : 'none',
-            'transitionOut'        : 'none',
-            'type'            : 'iframe',
-            'overlayColor': 'white',
-            'margin':'180'
-    });
-});
-</script>
-<link href="../fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css">
-<script src="../fancybox/jquery.fancybox-1.3.4.js"></script>
-<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-
-
 <html class="js canvas canvastext rgba borderradius boxshadow textshadow cssanimations cssgradients csstransitions fontface video wf-arvo-n4-active wf-arvo-n7-active wf-annieuseyourtelescope-n4-inactive wf-active" lang="en"><!--<![endif]--><head>
 <title><?php echo $lang->SITENAME?></title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
-<script src="fancybox/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(function() {	
-	var width = window.innerWidth;
-	var height = window.innerHeight;
-    $("#forgot").fancybox({
-            'width'            : width/2 ,
-            'height'        : height/2-170,
-            'autoScale'        : false,
-            'transitionIn'        : 'none',
-            'transitionOut'        : 'none',
-            'type'            : 'iframe',
-            'overlayColor': 'transparent',
-            'margin':'180'
-    });
-});
-</script>
 
+function selectLang(value)
+{
+$.ajax({
+type: "POST",
+url: 'controller/controller.php?method=selectLanguage',
+data:"value=" + value,
+success: function(data){
+
+		window.location.reload();
+	  }
+});
+
+
+}
+</script>
 <link href="css/all-317f9ee386b1fa9b62cc328db4b940a7.css" media="all" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/flexslider.css">
 <link rel="stylesheet" href="css/prettyPhoto.css">
@@ -74,8 +50,6 @@ $(function() {
 
 <link href="css/css_004.css" rel="stylesheet">
 <script id="twitterlib1362133953873" src="html/user_timeline.html"></script>
-<script src="fancybox/jquery.fancybox-1.3.4.js"></script>
-<script src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 </head>    
     
     
@@ -103,6 +77,13 @@ $(function() {
                                                         <div class="contentWrap"></div>
                                                         </div>
                                                 </span>
+                                                
+                                               
+ <select id="type" style="width:110px;" onchange="selectLang(value)">
+ <option selected>utf-8</option>
+ <option value="en">English</option>
+ <option value="hin">Hindi</option>
+ </select>                                   
                     
                     
                 </div>

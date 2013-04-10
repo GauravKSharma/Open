@@ -6,6 +6,12 @@ $route = array();
 
 class MyClass {
 	
+	public function selectLanguage(){
+		//echo $_REQUEST['value'];die;
+	  $_SESSION['lang'] = $_REQUEST['value'];
+	 
+	}
+	
 	public function checkcaptcha(){
            $original=$_SESSION["captcha"];
            $received=md5($_REQUEST["captchaval"]);
@@ -513,7 +519,7 @@ class MyClass {
                 $_SESSION["msgErrors"] = array();
             
         if($Validation->is_validName($_POST["f_name"]) && $Validation->is_validEmail($_POST["email"]) && $Validation->is_validPhone($_POST["phone"])){  
-                $obj->setUserName($_SESSION['uname']);
+            $obj->setUserName($_SESSION['uname']);
     		$obj->setFirstName($_REQUEST['f_name']);
     		$obj->setLastName ($_REQUEST['l_name']);
     		$obj->setAddress ($_REQUEST['address']);
@@ -614,6 +620,9 @@ public function feedback() {
  */
     public function login() {
        
+//     	echo $_SERVER["REMOTE_ADDR"];
+//     	echo $_COOKIE['PHPSESSID'];
+//     	die;
         if (isset($_POST) && count($_POST) > 0) {
             //print_r ($_POST ['user_type']);
             require_once ("../model/classes.login.php");

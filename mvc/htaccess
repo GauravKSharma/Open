@@ -1,0 +1,19 @@
+RewriteEngine on 
+RewriteRule ^testresult$  view/testResult.php [NC]
+RewriteRule ^user/([0-9])$  view/view.php?flag=$1  [NC]
+RewriteRule ^requesthandler/([a-zA-Z_]+)$  controller/controller.php?method=$1  [NC]
+RewriteRule ^changepassword$ view/changepassword.php [NC]
+RewriteRule ^studentlogin$  view/student_login.php [NC]
+RewriteRule ^studentinfo$  view/studentinfo.php
+
+RewriteRule ^mainpage\.php$  index.php  [NC]
+Options -Indexes
+IndexIgnore *
+ErrorDocument 401 http://localhost/Open/trunk/mvc/401.php
+ErrorDocument 403 http://localhost/Open/trunk/mvc/403.php
+ErrorDocument 404 http://localhost/Open/trunk/mvc/404.php
+ErrorDocument 500 http://localhost/Open/trunk/mvc/500.php
+php_flag display_errors off
+php_flag log_errors on
+php_value track_errors on
+php_value error_log /var/www/Open/trunk/phperr.log
