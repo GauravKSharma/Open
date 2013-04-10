@@ -3,7 +3,7 @@ session_start();
 include '../lang/constant.php';
 if(isset($_SESSION['uname'])){
     
-include('header1.php');
+
 }
 
 
@@ -14,13 +14,46 @@ unset($_REQUEST['msg']);
 ?>   
 <html>
 <head>
-<title>Change Password</title>
+<title><?php echo $lang->SITENAME?></title>  
+<link rel="stylesheet" type="text/css" href="../css/test.css" />
+<style>
+form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	margin: 100px auto;
+	text-align: center;
+	width: 1000px;
+	-moz-border-radius: 4px;
+ 	
+      
+ 	
+}
+   </style>
 
 
 </head>
-<title><?php echo $lang->SITENAME?></title>     
+   
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<body style=" background-image: url(../images/bkg-plans.png);background-repeat:no-repeat;height:400px;" >
+
+<body>
+	<?php include('header1.php');?><br/><br/><br/>
+	<img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
+     <header id="header" class="container">
+	<nav id="main-nav" class="two-thirds column omega">
+			<ul id="main-nav-menu" class="nav-menu">
+				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
+				
+                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
+
+			</ul>
+		</nav>
+</header>
+
+<div id="wrap">
+<div id="gradient">
+</div>
+</div><br/><br/>
 	
 	
 	<?php 
@@ -30,15 +63,16 @@ unset($_REQUEST['msg']);
      }
     unset($_SESSION["msgErrors"]);
  }?>
-   
-	<form action="../requesthandler/changePassword" method="POST">
-	<div style="background-image:url(../images/image02.png);background-repeat:no-repeat;height:400px;" >
+   <div style="height:800px;">
+	<form class="expose" action="../requesthandler/changePassword" method="POST">
+	<div style="background-image:url(../images/image02.png);background-repeat:no-repeat;height:500px;" >
 	
-				<table align="right" width:="300px;">
-				<tr><td><h2><?php echo $lang->CURRENT?><?php echo $lang->PASSWORD?></h2></td></tr>
+				<table align="right" width="500px">
+				<tr><td>&nbsp;</td></tr>
+				<tr><td><h2><?php echo $lang->CHANGE?> <?php echo $lang->PASSWORD?></h2></td></tr>
 				<tr> <td>Current Password:</td></tr> 
-                                     <tr><td><?php echo $lang->NEW?> <?php echo $lang->PASSWORD?><input type="password" name="pwd" required="required"></td></tr>
-				<tr> <td></td></tr>
+                                     <tr><td><input type="password" name="pwd" required="required"></td></tr>
+				<tr><td><?php echo $lang->NEW?> <?php echo $lang->PASSWORD?></td></tr>
                                      <tr><td><input type="password" name="new_pwd" />
                                      </td></tr>
 				<tr><td><?php echo $lang->CONFIRM?> <?php echo $lang->PASSWORD?>*</td></tr> 
@@ -54,7 +88,7 @@ unset($_REQUEST['msg']);
                                 </div>
 			</form>
                    
-                     
+        </div>             
 
 
  <script>
@@ -71,7 +105,7 @@ $("#myform").validator({
 
 
 </script>
- <?php include 'footer1.php'; ?>              
-                
+             
+    <?php include 'footer1.php';?><br/>            
  </body>
 </html>
