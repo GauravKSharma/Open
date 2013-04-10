@@ -57,7 +57,7 @@ class sampleTest extends model {
 		$this->db->From ( "question_set" );
 		$this->db->join ( "question_bank", "question_set.id=question_bank.question_id" );
 		$this->db->join ( "category", " question_set.category_id=category.id " );
-		$this->db->join ( "question_options", "question_bank.id=question_options.question_id where category.id=1 and question_set.teacher_name ='$teacher' limit 1" );
+		$this->db->join ( "question_options", "question_bank.id=question_options.question_id where category.id=" . "'" . $this->getCategory() . "'" . "and question_set.teacher_name ='$teacher' limit 1" );
 		$this->db->Select ();
 	        //echo $this->db->lastQuery ();
 		return $this->db->resultArray ();

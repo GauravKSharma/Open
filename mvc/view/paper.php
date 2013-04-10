@@ -1,3 +1,4 @@
+
 <html>
  
  <head>
@@ -10,7 +11,7 @@
   type: "POST",
   url: '../controller/controller.php?method=fetchPaper',
   //data: $('#frmid').serialize(),
-  data:"value=" + fetch,
+  data:"value=" + fetch+"&cid="+<?php echo $_REQUEST['value']; ?>,
 
   success: function(data){
 

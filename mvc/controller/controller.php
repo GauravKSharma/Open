@@ -312,6 +312,7 @@ class MyClass {
 		if(isset($_POST) > 0){
 			require_once("../model/classes.sampleTest.php");
 			$sampletest = new sampleTest();
+$sampletest->setCategory($_REQUEST['cid']);
 			$fetch=$sampletest->retrieveQuestion();
                         if($fetch){
 				include("../view/samplepaper.php");

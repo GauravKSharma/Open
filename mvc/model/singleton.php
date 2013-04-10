@@ -14,8 +14,8 @@ class DBConnection {
     private static $instance;
     private static $_host = "localhost";
     private static $_user = "root";
-    private static $_password = "";
-    private static $_database = "";
+    private static $_password = "admin";
+    private static $_database = "online_examination_system";
     private $_tableName = "";
     private $_join = "";
     private $_where = "";
