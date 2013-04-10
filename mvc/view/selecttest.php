@@ -30,6 +30,7 @@ session_start();
 <body>
 
 <?php include 'header1.php';?><br/><br/><br/>
+<img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
 <header id="header" class="container" >
 	<div id="header-inner" class="sixteen columns over" >
 		<div id="masthead" class="one-third column alpha">
@@ -66,6 +67,7 @@ session_start();
 }
 ?>  
 </div>
+<div style="height: 850px;">
 <form class="expose" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=settest" method="POST">
 <div style="background-image: url(../images/professor-at-desk.png); background-repeat: no-repeat;height:600px;width:600px; ">
   
@@ -85,6 +87,7 @@ session_start();
 </table>
 </div>
 </form>
-
+</div>
+<?php include 'footer1.php';?>
 </body>
 </html>

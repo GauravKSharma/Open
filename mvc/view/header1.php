@@ -58,9 +58,9 @@ li a:hover {
 <body class="body js-enabled">
   
 
-<div id=123 style="height:50px;width:100%;margin-top: 8px;background-color:#383838 ;">
-<div id=1234 style="height:50px;width:15%; float:left;background-color:#383838 ;"></div>
-<div id=1234 style="height:50px;width:15%; float:left;background-color:#383838 ;">
+<div id=123 style="height:40px;width:100%;margin-top: 8px;background-color:#383838 ;">
+<div id=1234 style="height:40px;width:15%; float:left;background-color:#383838 ;"></div>
+<div id=1234 style="height:40px;width:15%; float:left;background-color:#383838 ;">
 <?php
 					//session_start ();
 					if (isset ( $_SESSION ['uname'] )) {?>
@@ -71,7 +71,7 @@ li a:hover {
 
              <div id=12345 style="height:30px;width:35%; float:right;">  
              <ul id="main-nav-menu" class="nav-menu">
-		        <li><a href="../view/changepassword.php" id="changes" style="color: white;"><?php echo $lang->CHANGE?> |</a></li>
+		        <li><a href="../view/changepassword.php" id="changes" style="color: white;"><?php echo $lang->CHANGE?> <?php echo $lang->PASSWORD?> |</a></li>
 		       
 		        <li id="nav-tour"><a href="../requesthandler/update" onclick="update()" style="color: white"><?php echo $lang->PROFILEUPDATE?>|</a></li>
 		        <li><a href="../view/logout.php" style="color: white"><?php echo $lang->LOGOUT?></a></li>

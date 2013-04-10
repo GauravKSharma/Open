@@ -101,8 +101,8 @@ $("#tab2").html(data);
 <div id="gradient">
 </div>
 </div>
- 
-<div id="tab2" style="height: 600px;width:85%;margin:80px;margin-left:100px;border:5px outset #ccc;overflow:scroll; " >
+
+<div id="tab2" style="height: 750px;width:85%;margin:80px;margin-left:100px;" >
 
 </div>
 
