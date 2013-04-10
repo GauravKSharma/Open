@@ -15,24 +15,24 @@ unset($_REQUEST['msg']);
     <head><title><?php echo $lang->SITENAME?></title>     
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
    
-    <link rel="stylesheet" type="text/css" href="../css/test.css" />
-        <script src="../js/jquery.min.js"></script>
-<script src="../js/md5.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost/Open/trunk/mvc/css/test.css" />
+        <script src="http://localhost/Open/trunk/mvc/js/jquery.min.js"></script>
+<script src="http://localhost/Open/trunk/mvc/js/md5.js"></script>
 
-<script src="../js/main.js"></script>
+<script src="http://localhost/Open/trunk/mvc/js/main.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
     <script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.validate.js"></script>
     
       <link rel="stylesheet" type="text/css"
-      href="../css/skin1.css"/> 
+      href="http://localhost/Open/trunk/mvc/css/skin1.css"/> 
 
      
     <link rel="stylesheet" type="text/css"
-      href="../css/form.css"/>
+      href="http://localhost/Open/trunk/mvc/css/form.css"/>
 
      
      <link rel="stylesheet" type="text/css"
-      href="../css/columns.css"/>
+      href="http://localhost/Open/trunk/mvc/css/columns.css"/>
     
     <style> 
     h1 {
@@ -48,7 +48,7 @@ unset($_REQUEST['msg']);
 	width: 600px;
 	-moz-border-radius: 4px;
      
-    background-image: url(../images/bkg-plans.png);
+    background-image: url(http://localhost/Open/trunk/mvc/images/bkg-plans.png);
  	background-repeat:no-repeat;
    background-size: 1600px;
         
@@ -61,7 +61,7 @@ unset($_REQUEST['msg']);
         function checkUnique(){
             $.ajax({
             type: "POST",
-            url: '../controller/controller.php?method=checkUser',
+            url: 'http://localhost/Open/trunk/mvc/controller/controller.php?method=checkUser',
             data: $('#myform').serialize(),
            success: function(data){
 
@@ -88,7 +88,7 @@ unset($_REQUEST['msg']);
        
       
      <form  id="myform" class="expose" action="../requesthandler/user_register" method="post">
-      <div style="background-image: url(../images/professor-checklist-72.png); background-repeat: no-repeat;width:600px;height:600px; ">
+      <div style="background-image: url(http://localhost/Open/trunk/mvc/images/professor-checklist-72.png); background-repeat: no-repeat;width:600px;height:600px; ">
       <table align="right" width="350px">
       <tr><td><?php echo $lang->USERNAME?>*</td><td><input type="text" name="u_name" required="required" minlength="6" onBlur="checkUnique()"/>
       <label id="tab3" style="margin-left:10px; font-size:14px; border:1px;"></label></td></tr>
@@ -108,7 +108,7 @@ unset($_REQUEST['msg']);
        <tr><td></td><td><input type="radio" value="female" name="gender"><?php echo $lang->FEMALE?></td></tr>
       <tr><td>College/Company Name*</td> <td><input type="text" name="cname"></td></tr>
       <tr><td><div class="lines" id="capref"></td>
-      <td><img src="captcha.php" class="form_captcha" id="image"/></td></tr>
+      <td><img src="http://localhost/Open/trunk/mvc/view/captcha.php" class="form_captcha" id="image"/></td></tr>
             <tr><td><?php echo $lang->VERIFICATION?>:</td>
             <td><input type="text" name="captcha" value="" class="captcha" id="captcha" onblur="checkCaptcha();"/></td></tr>
 </div>
@@ -156,7 +156,7 @@ $(":date").dateinput();
          //alert(a);
          $.ajax({
              type: "post",
-             url: "../controller/controller.php?method=checkCaptcha",
+             url: "http://localhost/Open/trunk/mvc/controller/controller.php?method=checkCaptcha",
              data:"captchaval="+a,
              success:function(data){
                  

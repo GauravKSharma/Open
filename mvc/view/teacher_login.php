@@ -15,7 +15,7 @@ if(isset($_SESSION['uname'])){
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <script>
     function openwindow(){
-	window.open("forgotPassword.php","popup3","width=500, height=400");
+	window.open("http://localhost/Open/trunk/mvc/view/forgotPassword.php","popup3","width=500, height=400");
 			}
     </script>
         <style>
@@ -28,7 +28,7 @@ if(isset($_SESSION['uname'])){
 	width: 500px;
 	-moz-border-radius: 4px;
         height:350px;
-        background-image: url(../images/bkg-plans.png);
+        background-image: url(http://localhost/Open/trunk/mvc/images/bkg-plans.png);
         
        
         
@@ -44,10 +44,10 @@ if(isset($_SESSION['uname'])){
         
         
         
-   <form id="myform" class="expose" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=login" method="post">
+   <form id="myform" class="expose" action="http://localhost/Open/trunk/mvc/requesthandler/login" method="post">
   <pre/>
      
-    <div style="background-image: url(../images/professor-blog.png); background-repeat: no-repeat;width:500px;height:330px; ">
+    <div style="background-image: url(http://localhost/Open/trunk/mvc/images/professor-blog.png); background-repeat: no-repeat;width:500px;height:330px; ">
      <table align="right" cellspacing="5px;">
      <tr>
      	<td><b><?php echo $lang->USERNAME?></b></td>

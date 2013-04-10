@@ -12,6 +12,7 @@ include('header1.php');
   <title><?php echo $lang->SITENAME?></title>     
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/test.css" />
+<link href="../css/all-317f9ee386b1fa9b62cc328db4b940a7.css" media="all" rel="stylesheet" type="text/css">
    <link rel="stylesheet" type="text/css"
         href="../css/standalone.css"/>
 
@@ -54,7 +55,7 @@ include('header1.php');
   {
   $.ajax({
   type: "POST",
-  url: '../controller/controller.php?method=fetchTeacher',
+  url: '../requesthandler/fetchTeacher',
   //data: $('#frmid').serialize(),
   data:"value=" + fetch,
 
@@ -75,7 +76,7 @@ include('header1.php');
 			<ul id="main-nav-menu" class="nav-menu">
 				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=3" ><?php echo $lang->HOME?></a></li>
 				
-                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
+                <li id="nav-tour"><a a href="../requesthandler/method=faq"><?php echo $lang->FAQ?></a></li>
 
 			</ul>
 		</nav>

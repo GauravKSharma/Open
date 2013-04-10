@@ -1,6 +1,6 @@
 <?php
 //session_start();
-include '../lang/constant.php';
+include '/var/www/Open/trunk/mvc/lang/constant.php';
 $row=mysql_fetch_assoc($get);
  
  
@@ -14,7 +14,7 @@ $row=mysql_fetch_assoc($get);
  
   <link rel="stylesheet" type="text/css" href="../css/test.css" />
    <link rel="stylesheet" type="text/css"
-        href="../css/standalone.css"/>
+        href="http://localhost/Open/trunk/mvc/css/standalone.css"/>
 
   <style>
 
@@ -29,7 +29,7 @@ $row=mysql_fetch_assoc($get);
 	width: 600px;
 	-moz-border-radius: 4px;
  	
-        background-image: url(../images/bkg-plans.png);
+        background-image: url(http://localhost/Open/trunk/mvc/images/bkg-plans.png);
  	background-repeat:no-repeat;
    background-size: 1600px;
  	
@@ -42,13 +42,13 @@ $row=mysql_fetch_assoc($get);
  
  <body>
      <?php include('header1.php'); ?><br/><br/><br/>
-     <img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
+     <img src="http://localhost/Open/trunk/mvc/images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
      <header id="header" class="container">
 	<nav id="main-nav" class="two-thirds column omega">
 			<ul id="main-nav-menu" class="nav-menu">
-				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
+				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/user/<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
 				
-                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
+                <li id="nav-tour"><a a href="http://localhost/Open/trunk/mvc/requesthandler/faq"><?php echo $lang->FAQ?></a></li>
 
 			</ul>
 		</nav>
@@ -69,7 +69,7 @@ $row=mysql_fetch_assoc($get);
  }?>
  </div>
 
-     <form class="expose" action="../controller/controller.php?method=updateProfile" method="post">
+     <form class="expose" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=updateProfile" method="post">
 	  <table>
     <tr><td><h2 style="text-align:center;"><?php echo $lang->PROFILEVIEW?></h2></td></tr>   
     

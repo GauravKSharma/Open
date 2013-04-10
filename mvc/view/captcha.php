@@ -29,7 +29,7 @@ if (produceCaptchaImage($textstr) != IMAGE_ERROR_SUCCESS) {
     header("Pragma: no-cache" );
 
     // output error image
-    @readfile('../images/captcha_error.gif');
+    @readfile('/var/www/Open/trunk/mvc/images/captcha_error.gif');
 }
 else{
     echo "error h";
@@ -43,7 +43,7 @@ function produceCaptchaImage($text) {
     $backgroundSizeY = 350;
     $sizeX = 200;
     $sizeY = 50;
-    $fontFile = "../css/verdana.ttf";
+    $fontFile = "/var/www/Open/trunk/mvc/css/verdana.ttf";
     $textLength = strlen($text);
 
     // generate random security values
@@ -63,7 +63,7 @@ function produceCaptchaImage($text) {
         return IMAGE_ERROR_GD_TYPE_NOT_SUPPORTED;
 
     // create image with background
-    $src_im = imagecreatefrompng( "../images/background.png");
+    $src_im = imagecreatefrompng( "/var/www/Open/trunk/mvc/images/background.png");
     if (function_exists('imagecreatetruecolor')) {
         // this is more qualitative function, but it doesn't exist in old GD
         $dst_im = imagecreatetruecolor($sizeX, $sizeY);

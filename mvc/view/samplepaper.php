@@ -64,7 +64,7 @@ display:none;
       </tr>
       <?php }?>
     </table>
-    <a href="../controller/controller.php?method=fetchAll&value=<?php echo $data;?>"> Pay and give test </a>
+    <a href="http://localhost/Open/trunk/mvc/controller/controller.php?method=fetchAll&value=<?php echo $data;?>"> Pay and give test </a>
    </div> 
   </body>
 </html>

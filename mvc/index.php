@@ -70,8 +70,8 @@ success: function(data){
                 <div class="one-third column" style="text-align:center;">
                     <div class="tagline medium notop"><?php echo $lang->PLEASESELECTLOGIN?></div>
 						<span>
-						        <a href="view/teacher_login.php" rel="#overlay" style="text-decoration:none"><button type="button"><?php echo $lang->TEACHERLOGIN?></button></a>
-							<a href="view/student_login.php" rel="#overlay" style="text-decoration:none"><button type="button"><?php echo $lang->STUDENTLOGIN?></button></a>
+						        <a href="teacherlogin" rel="#overlay" style="text-decoration:none"><button type="button"><?php echo $lang->TEACHERLOGIN?></button></a>
+							<a href="studentlogin" rel="#overlay" style="text-decoration:none"><button type="button"><?php echo $lang->STUDENTLOGIN?></button></a>
 							<div class="apple_overlay" id="overlay">
                                                           <!-- the external content is loaded inside this tag -->
                                                         <div class="contentWrap"></div>
@@ -108,9 +108,9 @@ success: function(data){
 	      	<a href="#main-nav-menu" class="mobile-menu-button button">+ Menu</a>
 		    <ul id="main-nav-menu" class="nav-menu">
 		        <li id="nav-home"><a href="index.php"><?php echo $lang->HOME?></a></li>
-		        <li id="nav-tour"><a href="controller/controller.php?method=sampleTest" target="_top"><?php echo $lang->SAMPLETEST?></a></li>
+		        <li id="nav-tour"><a href="requesthandler/sampleTest" target="_top"><?php echo $lang->SAMPLETEST?></a></li>
 		        <li id="nav-support"><a href="#" target="_top"><?php echo $lang->SUPPORT?></a></li>
-		        <li id="nav-prices"><a href="controller/controller.php?method=faq" target="_top"><?php echo $lang->FAQ?></a></li>
+		        <li id="nav-prices"><a href="http://localhost/Open/trunk/mvc/requesthandler/faq" target="_top"><?php echo $lang->FAQ?></a></li>
 		    </ul>
 	    </nav>  
 	</div>
@@ -162,7 +162,7 @@ and practice) quickly and easily. From professors setting up their final
  to use.</p>
 					</div>
 					<ul class="links-list">
-						<li><a class="btn-signup" href="view/register.php" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
+						<li><a class="btn-signup" href="register" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
 						<li><a class="btn-learn1" href="#" title="Learn More"><img src="images/btn-learn.png" class="btn-learn-ro" alt="learn more"></a></li>
 					</ul>
 				</div>
@@ -202,7 +202,7 @@ businesses, and other professionals who need an easy way to publish
 exams, tests, and quizzes online quickly.</p>
 					</div>
 					<ul class="links-list">
-						<li><a class="btn-signup" href="view/register.php" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
+						<li><a class="btn-signup" href="register" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
 					</ul>
 				</div>
 	    	</li>

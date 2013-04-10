@@ -188,13 +188,13 @@ class MyClass {
                         $get = $sampletest->getAll();
                         if($get){
                         	$_SESSION['get']=$get;
-                            include("../view/giveTest.php");
+                            include("/var/www/Open/trunk/mvc/view/giveTest.php");
 			}
                         
 		}
             }
         else{
-            header("location:../view/register.php");
+            header("location:../register");
         }
         }
 	
@@ -217,7 +217,7 @@ class MyClass {
 			$settest->setTesttype($_POST['test']);
 			$settest->setNo_of_questions($_POST['noofques']);
 			$settest->setTime($_POST['time']);
-			$settest->setNegativeMarking($_POST['negative']);
+			$settest->setNegativeMarkincheckUsg($_POST['negative']);
 			$settest->setCategory_id($_POST['cat']);
 			$settest->teacherId();
 			$settest->saveTest();
@@ -315,7 +315,7 @@ class MyClass {
 $sampletest->setCategory($_REQUEST['cid']);
 			$fetch=$sampletest->retrieveQuestion();
                         if($fetch){
-				include("../view/samplepaper.php");
+				include("/var/www/Open/trunk/mvc/view/samplepaper.php");
 			}
 		}
 	}
@@ -332,7 +332,7 @@ $sampletest->setCategory($_REQUEST['cid']);
 			$sampletest = new sampleTest();
 			$fetch=$sampletest->retrieveTeacher();
  			if($fetch){
- 				include("../view/paper.php");
+ 				include("/var/www/Open/trunk/mvc/view/paper.php");
  			}
  			else{
  				echo "No paper Available";
@@ -508,7 +508,7 @@ $sampletest->setCategory($_REQUEST['cid']);
    ------------------------------------------------------------
 */
     
-    public function updateProfile() {
+    public function updateprofile() {
     	if(isset ($_POST['submit'])){
             
             require_once("../model/classes.validation.php");
@@ -640,20 +640,20 @@ public function feedback() {
              
                
                 if ($result [0]['user_type'] == 2 && $_POST ['user_type'] == "teacher") {
-                  header("location:../view/view.php?flag=2");
+                  header("location:http://localhost/Open/trunk/mvc/user/2");
                   } 
                 else if ($result [0]['user_type'] == 3 && $_POST ['user_type'] == "student") {
-                    header("location:../view/view.php?flag=3");
+                    header("location:http://localhost/Open/trunk/mvc/user/3");
                 }
                 else if ($result [0]['user_type'] == 3 && $_POST ['type'] == "test") {
                     header("location:../view/testInstructions.php");
                 }
                 else {
                     if($_POST ['user_type'] == "student"){
-                   header ( "location:../view/student_login.php" );}
+                   header ( "location:http://localhost/Open/trunk/mvc/studentlogin" );}
                    
                    else {
-                     header ( "location:../view/teacher_login.php" );}
+                     header ( "location:http://localhost/Open/trunk/mvc/teacherlogin" );}
             
                    }
             
@@ -661,11 +661,11 @@ public function feedback() {
             
         else {
             if ($_POST ['type'] == "test") {
-                   header ( "location:../view/studentinfo.php" );
+                   header ( "location:http://localhost/Open/trunk/mvc/studentinfo" );
     
                      }
                      else
-            header ( "location:../mainpage.php" );
+            header ( "location:http://localhost/Open/trunk/mvc/mainpage.php" );
         }
         }
     }
@@ -686,7 +686,7 @@ public function feedback() {
                 echo "User name already exists";
             }
             else{
-                echo "<img src='../images/check.jpg' height='30px' width='30px'>";
+                echo "<img src='http://localhost/Open/trunk/mvc/images/check.jpg' height='30px' width='30px'>";
             }
         
        }

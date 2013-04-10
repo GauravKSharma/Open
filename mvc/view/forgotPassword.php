@@ -13,7 +13,7 @@
 	width: 500px;
 	-moz-border-radius: 4px;
         
-         background-image: url(../images/bkg-plans.png);
+         background-image: url(http://localhost/Open/trunk/mvc/images/bkg-plans.png);
  	background-repeat:no-repeat;
         background-size: 1000px;
         height:400px;
@@ -32,7 +32,7 @@
            
                
               <form  class="expose" action="../requesthandler/check" method="POST">
-                <div style="background-image:url(../images/professor-questions-100-left.png);background-repeat:no-repeat;height: 400px;width:500px;">
+                <div style="background-image:url(http://localhost/Open/trunk/mvc/images/professor-questions-100-left.png);background-repeat:no-repeat;height: 400px;width:500px;">
               <table align="right">
               <tr>
                <td><strong>Enter Your User Name And User Type </strong></td>

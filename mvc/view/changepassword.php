@@ -35,25 +35,7 @@ form.expose {
 </head>
    
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-
-<body>
-	<?php include('header1.php');?><br/><br/><br/>
-	<img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
-     <header id="header" class="container">
-	<nav id="main-nav" class="two-thirds column omega">
-			<ul id="main-nav-menu" class="nav-menu">
-				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
-				
-                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
-
-			</ul>
-		</nav>
-</header>
-
-<div id="wrap">
-<div id="gradient">
-</div>
-</div><br/><br/>
+<body style=" background-image: url(http://localhost/Open/trunk/mvc/images/bkg-plans.png);background-repeat:no-repeat;height:400px;" >
 	
 	
 	<?php 
@@ -63,9 +45,9 @@ form.expose {
      }
     unset($_SESSION["msgErrors"]);
  }?>
-   <div style="height:800px;">
-	<form class="expose" action="../requesthandler/changePassword" method="POST">
-	<div style="background-image:url(../images/image02.png);background-repeat:no-repeat;height:500px;" >
+   
+	<form action="http://localhost/Open/trunk/mvc/requesthandler/changePassword" method="POST">
+	<div style="background-image:url(http://localhost/Open/trunk/mvc/images/image02.png);background-repeat:no-repeat;height:400px;" >
 	
 				<table align="right" width="500px">
 				<tr><td>&nbsp;</td></tr>

@@ -16,7 +16,7 @@ else{
         
         <script>
     function openwindow(){
-	window.open("forgotPassword.php","popup3","width=500, height=400");
+	window.open("http://localhost/Open/trunk/mvc/view/forgotPassword.php","popup3","width=500, height=400");
 			}
     </script>
 
@@ -30,7 +30,7 @@ else{
 	width: 500px;
 	-moz-border-radius: 4px;
         height:350px;
-        background-image: url(../images/bkg-plans.png);
+        background-image: url(http://localhost/Open/trunk/mvc/images/bkg-plans.png);
         
        
         
@@ -43,10 +43,10 @@ else{
     
    <body style="background-color:#D0D0D0 ;">
     <div  style="height:30px;width:100%;margin-top: 8px;background-color:#383838 ;"><br/><br/><br/><br/>
-   <form id="myform" class="expose" action="../controller/controller.php?method=login" method="post">
+   <form id="myform" class="expose" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=login" method="post">
   <pre/>
      
-    <div style="background-image: url(../images/professor-blog.png); background-repeat: no-repeat;width:500px;height:330px; ">
+    <div style="background-image: url(http://localhost/Open/trunk/mvc/images/professor-blog.png); background-repeat: no-repeat;width:500px;height:330px; ">
      <table align="right" cellspacing="5px;">
      <tr>
      	<td><b><?php echo $lang->USERNAME?></b></td>

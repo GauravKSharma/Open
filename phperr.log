@@ -1,0 +1,161 @@
+[10-Apr-2013 09:58:01 UTC] PHP Notice:  Undefined index: options0 in /var/www/Open/trunk/mvc/view/testResult.php on line 14
+[10-Apr-2013 09:58:01 UTC] PHP Notice:  Undefined index: options1 in /var/www/Open/trunk/mvc/view/testResult.php on line 14
+[10-Apr-2013 09:59:48 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 09:59:48 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:03:18 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:03:18 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:03:34 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:03:34 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:30:21 UTC] PHP Warning:  imagettftext(): Could not find/open font in /var/www/Open/trunk/mvc/view/captcha.php on line 84
+[10-Apr-2013 10:30:21 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:30:21 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:32:10 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:32:10 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:32:53 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:32:53 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:32:55 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:32:55 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:32:56 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:32:56 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:32:57 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:32:57 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:33:23 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:33:23 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:33:59 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:33:59 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:34:00 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:34:00 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:35:50 UTC] PHP Warning:  imagettftext(): Could not find/open font in /var/www/Open/trunk/mvc/view/captcha.php on line 84
+[10-Apr-2013 10:35:50 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:35:50 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:36:36 UTC] PHP Warning:  imagecreatefrompng(localhost/Open/trunk/mvc/images/background.png): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/view/captcha.php on line 66
+[10-Apr-2013 10:36:36 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/Open/trunk/mvc/view/captcha.php on line 70
+[10-Apr-2013 10:36:36 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_GD_RESIZE_ERROR - assumed 'IMAGE_ERROR_GD_RESIZE_ERROR' in /var/www/Open/trunk/mvc/view/captcha.php on line 78
+[10-Apr-2013 10:36:36 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:36:37 UTC] PHP Warning:  imagecreatefrompng(localhost/Open/trunk/mvc/images/background.png): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/view/captcha.php on line 66
+[10-Apr-2013 10:36:37 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/Open/trunk/mvc/view/captcha.php on line 70
+[10-Apr-2013 10:36:37 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_GD_RESIZE_ERROR - assumed 'IMAGE_ERROR_GD_RESIZE_ERROR' in /var/www/Open/trunk/mvc/view/captcha.php on line 78
+[10-Apr-2013 10:36:37 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:36:44 UTC] PHP Warning:  imagecreatefrompng(localhost/Open/trunk/mvc/images/background.png): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/view/captcha.php on line 66
+[10-Apr-2013 10:36:44 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/Open/trunk/mvc/view/captcha.php on line 70
+[10-Apr-2013 10:36:44 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_GD_RESIZE_ERROR - assumed 'IMAGE_ERROR_GD_RESIZE_ERROR' in /var/www/Open/trunk/mvc/view/captcha.php on line 78
+[10-Apr-2013 10:36:44 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:36:46 UTC] PHP Warning:  imagecreatefrompng(localhost/Open/trunk/mvc/images/background.png): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/view/captcha.php on line 66
+[10-Apr-2013 10:36:46 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/Open/trunk/mvc/view/captcha.php on line 70
+[10-Apr-2013 10:36:46 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_GD_RESIZE_ERROR - assumed 'IMAGE_ERROR_GD_RESIZE_ERROR' in /var/www/Open/trunk/mvc/view/captcha.php on line 78
+[10-Apr-2013 10:36:46 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:36:48 UTC] PHP Warning:  imagecreatefrompng(localhost/Open/trunk/mvc/images/background.png): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/view/captcha.php on line 66
+[10-Apr-2013 10:36:48 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/Open/trunk/mvc/view/captcha.php on line 70
+[10-Apr-2013 10:36:48 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_GD_RESIZE_ERROR - assumed 'IMAGE_ERROR_GD_RESIZE_ERROR' in /var/www/Open/trunk/mvc/view/captcha.php on line 78
+[10-Apr-2013 10:36:48 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:36:49 UTC] PHP Warning:  imagecreatefrompng(localhost/Open/trunk/mvc/images/background.png): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/view/captcha.php on line 66
+[10-Apr-2013 10:36:49 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/Open/trunk/mvc/view/captcha.php on line 70
+[10-Apr-2013 10:36:49 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_GD_RESIZE_ERROR - assumed 'IMAGE_ERROR_GD_RESIZE_ERROR' in /var/www/Open/trunk/mvc/view/captcha.php on line 78
+[10-Apr-2013 10:36:49 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:37:45 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:37:45 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:38:07 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:38:07 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:39:55 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:39:55 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:43:38 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:43:38 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:45:50 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:45:50 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:48:20 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:48:20 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 10:51:29 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 10:51:29 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:03:43 UTC] PHP Notice:  Undefined index: flag in /var/www/Open/trunk/mvc/view/faq.php on line 103
+[10-Apr-2013 11:03:48 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /var/www/Open/trunk/mvc/model/classes.faq.php on line 69
+[10-Apr-2013 11:03:59 UTC] PHP Notice:  Undefined index: flag in /var/www/Open/trunk/mvc/view/faq.php on line 103
+[10-Apr-2013 11:05:56 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:05:56 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:05:56 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:06:08 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:06:08 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:06:08 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:06:20 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:06:21 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:06:21 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:07:10 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:07:11 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:07:11 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:10:35 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /var/www/Open/trunk/mvc/controller/controller.php on line 334
+[10-Apr-2013 11:10:35 UTC] PHP Warning:  include(http://localhost/Open/trunk/mvc/view/paper.php): failed to open stream: no suitable wrapper could be found in /var/www/Open/trunk/mvc/controller/controller.php on line 334
+[10-Apr-2013 11:10:35 UTC] PHP Warning:  include(): Failed opening 'http://localhost/Open/trunk/mvc/view/paper.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/Open/trunk/mvc/controller/controller.php on line 334
+[10-Apr-2013 11:10:36 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /var/www/Open/trunk/mvc/controller/controller.php on line 334
+[10-Apr-2013 11:10:36 UTC] PHP Warning:  include(http://localhost/Open/trunk/mvc/view/paper.php): failed to open stream: no suitable wrapper could be found in /var/www/Open/trunk/mvc/controller/controller.php on line 334
+[10-Apr-2013 11:10:36 UTC] PHP Warning:  include(): Failed opening 'http://localhost/Open/trunk/mvc/view/paper.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/Open/trunk/mvc/controller/controller.php on line 334
+[10-Apr-2013 11:11:54 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:11:54 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:11:54 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:13:44 UTC] PHP Warning:  include(/var/www/view/samplepaper.php): failed to open stream: No such file or directory in /var/www/Open/trunk/mvc/controller/controller.php on line 317
+[10-Apr-2013 11:13:44 UTC] PHP Warning:  include(): Failed opening '/var/www/view/samplepaper.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/Open/trunk/mvc/controller/controller.php on line 317
+[10-Apr-2013 11:14:53 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:14:53 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:14:53 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:16:08 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:16:09 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:16:09 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:18:15 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:18:15 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:18:15 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:23:14 UTC] PHP Notice:  Undefined index: options0 in /var/www/Open/trunk/mvc/view/testResult.php on line 14
+[10-Apr-2013 11:23:14 UTC] PHP Notice:  Undefined index: options1 in /var/www/Open/trunk/mvc/view/testResult.php on line 14
+[10-Apr-2013 11:23:56 UTC] PHP Notice:  Undefined index: options0 in /var/www/Open/trunk/mvc/view/testResult.php on line 14
+[10-Apr-2013 11:23:56 UTC] PHP Notice:  Undefined index: options1 in /var/www/Open/trunk/mvc/view/testResult.php on line 14
+[10-Apr-2013 11:24:16 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 180
+[10-Apr-2013 11:24:16 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 96
+[10-Apr-2013 11:24:16 UTC] PHP Notice:  Use of undefined constant IMAGE_ERROR_SUCCESS - assumed 'IMAGE_ERROR_SUCCESS' in /var/www/Open/trunk/mvc/view/captcha.php on line 21
+[10-Apr-2013 11:24:31 UTC] PHP Notice:  Undefined index: flag in /var/www/Open/trunk/mvc/view/faq.php on line 103
+[10-Apr-2013 11:25:25 UTC] PHP Notice:  Undefined index: flag in /var/www/Open/trunk/mvc/view/faq.php on line 103
+[10-Apr-2013 11:25:33 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /var/www/Open/trunk/mvc/model/classes.faq.php on line 69
+[10-Apr-2013 11:34:12 UTC] PHP Notice:  Undefined index: type in /var/www/Open/trunk/mvc/controller/controller.php on line 662
+[10-Apr-2013 11:34:27 UTC] PHP Notice:  Undefined index: type in /var/www/Open/trunk/mvc/controller/controller.php on line 662
+[10-Apr-2013 11:34:55 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /var/www/Open/trunk/mvc/model/classes.faq.php on line 69
+[10-Apr-2013 11:45:36 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 493
+[10-Apr-2013 11:45:39 UTC] PHP Notice:  Undefined index: uname in /var/www/Open/trunk/mvc/controller/controller.php on line 493
+[10-Apr-2013 11:50:43 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /var/www/Open/trunk/mvc/view/profile.php on line 3
+[10-Apr-2013 11:50:43 UTC] PHP Warning:  include(http://localhost/Open/trunk/mvc/lang/constant.php): failed to open stream: no suitable wrapper could be found in /var/www/Open/trunk/mvc/view/profile.php on line 3
+[10-Apr-2013 11:50:43 UTC] PHP Warning:  include(): Failed opening 'http://localhost/Open/trunk/mvc/lang/constant.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/Open/trunk/mvc/view/profile.php on line 3
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 12
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 12
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/header1.php on line 14
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/header1.php on line 14
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/header1.php on line 67
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/header1.php on line 67
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/header1.php on line 74
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/header1.php on line 74
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/header1.php on line 74
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/header1.php on line 74
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/header1.php on line 76
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/header1.php on line 76
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/header1.php on line 77
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/header1.php on line 77
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 49
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 49
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 51
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 51
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 74
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 74
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 78
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 78
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 80
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 80
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 81
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 81
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 82
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 82
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 83
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 83
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/profile.php on line 84
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/profile.php on line 84
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/footer1.php on line 6
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/footer1.php on line 6
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/footer1.php on line 9
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/footer1.php on line 9
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/footer1.php on line 9
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/footer1.php on line 9
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Undefined variable: lang in /var/www/Open/trunk/mvc/view/footer1.php on line 9
+[10-Apr-2013 11:50:43 UTC] PHP Notice:  Trying to get property of non-object in /var/www/Open/trunk/mvc/view/footer1.php on line 9
