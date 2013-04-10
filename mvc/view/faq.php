@@ -9,9 +9,11 @@ unset($_REQUEST['msg']);
 <html>
  
  <head>
-  <title><?php echo $lang->SITENAME?></title>     
+  <title><?php echo $lang->SITENAME?></title> 
+  <link rel="stylesheet" type="text/css" href="../css/test.css" />    
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href="../css/all-317f9ee386b1fa9b62cc328db4b940a7.css" media="all" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/test.css" />
    <link rel="stylesheet" type="text/css"
         href="../css/standalone.css"/>
@@ -47,17 +49,17 @@ unset($_REQUEST['msg']);
     text-decoration: none;
    }
     
-       form.expose {
+       form.expos{
 	
 	background: #fff url(/media/img/gradient/h150.png) repeat-x;
 	padding: 20px;
 	
 	
-	width: 200px;
+	width: 600px;
 	
-        
+       
         border: 1px outset #ccc;
-      
+      background-color:#c7f8ff;
         
        
         
@@ -91,20 +93,21 @@ unset($_REQUEST['msg']);
      <?php
      
      if(isset($_SESSION['uname'])){
-      include 'header1.php'; }?>
-     
-     
-     <img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
-     <header id="header" class="container">
+     }?>
+      <div  style="height:30px;width:100%;margin-top: 8px;background-color:#383838 ;"><br/><br/><br/><br/>
+     <div>
+     <div><img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;"></div>
+     <div style="float: right;"><header id="header" class="container" >
 	<nav id="main-nav" class="two-thirds column omega">
 			<ul id="main-nav-menu" class="nav-menu">
 				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
-				
+			
                 <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
 
 			</ul>
 		</nav>
-</header>
+</header></div>
+</div>
 
 <div id="wrap">
 <div id="gradient">
@@ -112,12 +115,12 @@ unset($_REQUEST['msg']);
 </div>
 
      
-  <div  style="height:30px;width:100%;margin-top: 8px;"><br/><br/><br/><br/>
+  <div  style="height:30px;width:100%;margin-top: 8px;"></div><br/><br/><br/><br/>
      
      
      
     <div>
-     <div style="width:15%;height: 500px;border: 1px outset #ccc;float: left;">
+     <div style="width:15%;height: 550px;border: 1px outset #ccc;float: left;margin-left:20px;">
     <p>Category Related Question</p>
      
     <?php 
@@ -126,21 +129,21 @@ unset($_REQUEST['msg']);
     $count ++;?>
       <ul>
        
-        <li> <div style="width: 20px;"><a href="#" onclick="faq(<?php echo $count; ?> )"><?php echo ($row['category_name']); ?></a></div></li>
+        <li style="margin-left: 20px;"> <a href="#" onclick="faq(<?php echo $count; ?> )"><?php echo ($row['category_name']); ?></a></li>
       </ul> 
         <?php }?>
         
           
        
      </div>  
-         <div id="tab3" style="width:70%; float: right;height: 40px;">
+         <div id="tab3" style="width:55%; height: 600px;margin-left:450px;overflow:auto;">
     
     
-     </div> 
+     </div> <br/><br/>
      
-    <div style="float: right;">
-   <form action="../controller/controller.php?method=addQuestion" method="POST" class="expose">
-      <table>
+    <div style="width:70%;float:right;">
+   <form action="../controller/controller.php?method=addQuestion" method="POST" class="expos">
+      <table align="center">
      <tr>
      <td>
       <?php echo $lang->ADDYOURQUERY?>?</td></tr>
@@ -155,8 +158,8 @@ unset($_REQUEST['msg']);
      </form>
     </div>
      </div>
-    
-    
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<?php include 'footer1.php';?><br/>
  </body>
  
 </html>

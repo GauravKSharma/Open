@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include '../lang/constant.php';
 
 if(isset($_SESSION['uname'])){
@@ -67,11 +67,11 @@ include('header1.php');
  </script>
  </head>
  <body>
-     
-     
-          <img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
-     <header id="header" class="container">
-	<nav id="main-nav" class="two-thirds column omega">
+     <br/><br/>
+     <div>
+          <div><img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;"></div>
+     <div style="float: right;"><header id="header" class="container">
+	  <nav id="main-nav" class="two-thirds column omega">
 			<ul id="main-nav-menu" class="nav-menu">
 				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=3" ><?php echo $lang->HOME?></a></li>
 				
@@ -80,6 +80,8 @@ include('header1.php');
 			</ul>
 		</nav>
 </header>
+</div>
+<div>
 
 <div id="wrap">
 <div id="gradient">
@@ -87,13 +89,14 @@ include('header1.php');
 </div>
   <div  style="height:30px;width:100%;margin-top: 8px;"><br/><br/><br/>
    <div>
-   <div style="width:15%;height: 450px;border: 1px outset #ccc;float: left;">
+   <div style="height:850px;">
+   <div style="width:15%;height: 450px;border: 1px outset #ccc;float: left;margin-left:20px;">
     <?php 
     $count = 0; 
     while($row=mysql_fetch_assoc($view)){ 
     $count ++;?>
      <ul>   
-        <li><div style="width: 20px;"><a href="#" onMouseover="faq(<?php echo $count; ?> )"><?php echo ($row['category_name']); ?></a></div></li>
+        <li style="margin-left:20px;"><a href="#" onMouseover="faq(<?php echo $count; ?> )"><?php echo ($row['category_name']); ?></a></li>
      </ul>
         <?php }?>  
    </div>
@@ -103,8 +106,9 @@ include('header1.php');
          
      </div>
      </div>
+     </div>
       
-      
+      <?php include 'footer1.php';?><br/>
  </body>
  
 </html>
