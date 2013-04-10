@@ -10,7 +10,7 @@
 <div id="actions">
   
 </div>
-<form action="../view/testResult.php" method="get"> 
+<form action="../testresult" method="get"> 
 <div class="scrollable vertical">
     
    <div class="items">

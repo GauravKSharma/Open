@@ -21,7 +21,7 @@ $(document).ready(function(){
 {
 padding:5px;
 text-align:center;
-background-color:#e5eecc;
+background-color:grey;
 border:solid 1px #c3c3c3;
 }
 #panel

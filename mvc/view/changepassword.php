@@ -1,5 +1,12 @@
 <?php
 session_start();
+include '../lang/constant.php';
+if(isset($_SESSION['uname'])){
+    
+include('header1.php');
+}
+
+
 if(isset($_REQUEST['msg'])){
 		echo '<script type="text/javascript">alert("Wrong Current Password"); </script>';
 }
@@ -11,7 +18,8 @@ unset($_REQUEST['msg']);
 
 
 </head>
-
+<title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <body style=" background-image: url(../images/bkg-plans.png);background-repeat:no-repeat;height:400px;" >
 	
 	
@@ -23,17 +31,17 @@ unset($_REQUEST['msg']);
     unset($_SESSION["msgErrors"]);
  }?>
    
-	<form action="../controller/controller.php?method=changePassword" method="POST">
+	<form action="../requesthandler/changePassword" method="POST">
 	<div style="background-image:url(../images/image02.png);background-repeat:no-repeat;height:400px;" >
 	
-				<table align="right" width:="300px";>
-				<tr><td><h2>Change Password</h2></td></tr>
+				<table align="right" width:="300px;">
+				<tr><td><h2><?php echo $lang->CURRENT?><?php echo $lang->PASSWORD?></h2></td></tr>
 				<tr> <td>Current Password:</td></tr> 
-                                     <tr><td><input type="password" name="pwd" required="required"></td></tr>
-				<tr> <td>New Password:</td></tr>
+                                     <tr><td><?php echo $lang->NEW?> <?php echo $lang->PASSWORD?><input type="password" name="pwd" required="required"></td></tr>
+				<tr> <td></td></tr>
                                      <tr><td><input type="password" name="new_pwd" />
                                      </td></tr>
-				<tr><td>Confirm Password*:</td></tr> 
+				<tr><td><?php echo $lang->CONFIRM?> <?php echo $lang->PASSWORD?>*</td></tr> 
                                      <tr><td><input type="password" name="check" id="check" data-equals="new_pwd" /></td></tr> 
                                 <tr><td>&nbsp;</td>
                                 <td>&nbsp;</td></tr>
@@ -62,28 +70,8 @@ $("#myform").validator({
 	    });
 
 
-$(function() {
-
-	// expose the form when it's clicked or cursor is focused
-	var form = $(".expose").bind("click keydown", function() {
-
-		$(this).expose({
-
-			// when exposing is done, change form's background color
-			onLoad: function() {
-				form.css({backgroundColor: '#c7f8ff'});
-			},
-
-			// when "unexposed", return to original background color
-			onClose: function() {
-				form.css({backgroundColor: null});
-			}
-
-		});
-	});
-});
 </script>
-               
+ <?php include 'footer1.php'; ?>              
                 
  </body>
 </html>

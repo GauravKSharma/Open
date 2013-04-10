@@ -1,7 +1,26 @@
+<?php
+include '../lang/constant.php';
+?>
 <html>
     <head>
+        <title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
     <style>
+    /* trigger button */
+  #download_now {
+    background:transparent url(../images/download.jpg) no-repeat scroll 0 0;
+    display:block;
+    height:100px;
+    margin: 0 auto;
+    margin-bottom:30px;
+    overflow:hidden;
+    text-indent:-999em;
+    width:200px;
+    cursor:pointer;
+  }
+
+  /* mouseover state */
   #download_now:hover {
     background-position:0 -44px;
   }
@@ -14,9 +33,10 @@
   /* tooltip styling */
   .tooltip {
     display:none;
+    background:url(../images/bkground.jpg);
     height:93px;
     padding:20px 10px 5px 10px;
-    width:250px;
+    width:200px;
     font-size:11px;
     color:red;
   }
@@ -32,6 +52,23 @@
     font-size:11px;
     font-weight:bold;
   }
+  
+   form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	margin: 100px auto;
+	text-align: center;
+	width: 600px;
+	-moz-border-radius: 4px;
+ 	
+	height: 400px;
+	
+	 background-image: url(../images/bkg-plans.png);
+ 	background-repeat:no-repeat;
+        background-size: 1200px;
+}
+   
   </style>
     
     <script>
@@ -42,75 +79,61 @@
     </head>
     
     <body>
-    <div style="width:600px:height:700px;">
-    <div style="width:300px:height:690px;float:left;">
-        <form action="../controller/controller.php?method=upload" enctype="multipart/form-data" method="POST">
+   
+        <form class="expose" action="../controller/controller.php?method=upload" enctype="multipart/form-data" method="POST">
             <!--Select Category-->
-            <p> Select Category </p>
-            <input type="text" name="category">
-            <a href="#" onclick="openwindow();"> View Category Code </a><br/>
+	    <div style="background-image: url(../images/professor-enrollment.png);background-repeat: no-repeat;height: 300px;width:600px;">
+	    <table align="right">
+		<tr><td><?php echo $lang->SELECT?> <?php echo $lang->CATEGORY?> </td></tr>
+            <tr><td><input type="text" name="category"></td></tr>
+            <tr><td><a href="#" onclick="openwindow();"> <?php echo $lang->VIEWCATEGORYCODE?> </a></td></tr>
 
            <!--Number of questions-->
-            <p> Number of questions to upload </p>
-            <input type="text" name="numbers"><br/>           
+            <tr><td> <?php echo $lang->NOOFQUESTIONS?><?php echo $lang->TO?><?php echo $lang->UPLOAD?> </td></tr>
+            <tr><td><input type="text" name="numbers"></td></tr>
            
            
            <!--Upload Paper-->
            
-            <p> Upload Paper </p>
-           <table width="350" border="0" cellpadding="1" cellspacing="1" class="box">
+            <tr><td><?php echo $lang->UPLOADPAPER?></td></tr>
+           
 		<tr>
 		<td width="246">
                  <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                  <input name="userfile" type="file" id="userfile">
-                </td>
-               <td width="80"><input name="upload" type="submit" class="box" id="upload" value=" Upload "></td>
-               </tr>
+                </td></tr>
+               <tr><td width="80"><input name="upload" type="submit" class="box" id="upload" value=" Upload "></td></tr>
+               
              </table>
-        </form>
-        </div>
-        
-  <div style="width:290px:height:690px;float:right;">
-        
-       <div style="height:290px"></div>
-<img src="../images/icon.jpg"></img><br/>
-<h5 id="download_now">Download now</h5>
+	    
+	     <div style="height:280px;"></div>
+             <!-- trigger element. a regular workable link -->
+               <a id="download_now" style="margin-left: 350px;">Download Now</a>
 
+	    
+	    <div class="tooltip">
 
-<div class="tooltip">
-
-  <table style="margin:0;background-image:url(../images/bg1.jpg); " >
+  <table style="margin:0">
     <tr>
-      <td class="label">File Type:</td>
-      <td style="color:white;">Excel</td>
+      <td class="label"><?php echo $lang->FILETYPE?>:</td>
+      <td style="color: white;"><?php echo $lang->EXCEL?></td>
     </tr>
     <tr>
-      <td class="label">Extension:</td>
-      <td style="color:white;">.csv</td>
+      <td class="label"><?php echo $lang->EXTENTION?>:</td>
+      <td style="color: white;"><?php echo $lang->CSV?></td>
     </tr>
     <tr>
-      <td class="label">Size:</td>
-      <td style="color:white;">112 kB</td>
+      <td class="label"><?php echo $lang->SIZE?>:</td>
+      <td style="color: white;">112 kB</td>
     </tr>
   </table>
 
-  <a href="/release-notes">Paper Upload Type</a>
+  <a href="/release-notes"><?php echo $lang->UPLOADPAPERTYPE?></a>
 </div>
-  
-     </div>
-   </div>  
 
-<?php 
-if(isset($_REQUEST['msg'])){
-    echo '<script type="text/javascript">alert("Paper Uploaded"); </script>';
-}
-if(isset($_REQUEST['error'])){
-    echo '<script type="text/javascript">alert("Sorry"); </script>';
-}
-unset($_REQUEST['msg']);
-unset($_REQUEST['error']);
-?>        
-        
+	    </div>
+        </form>
+   
    <script>
   $(document).ready(function() {
       $("#download_now").tooltip({ effect: 'slide'});

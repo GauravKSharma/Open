@@ -1,8 +1,11 @@
 <?php 
+include '../lang/constant.php';
 session_start();
 ?>
 <html>
 <head>
+    <title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/test.css" />
 <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
 
@@ -36,11 +39,9 @@ session_start();
 		</div>
 		<nav id="main-nav" class="two-thirds column omega">
 			<ul id="main-nav-menu" class="nav-menu">
-				<li id="nav-home"><a href="#" onclick="home()">Home</a></li>
-				<li id="nav-support"><a href="#" onclick="setTest()"> Set Test </a></li>
-				<li id="nav-tour"><a href="#" onclick="viewResultTeacher()">View Result</a></li>
-				<li id="nav-support"><a href="#" onclick="upload()">Upload Paper</a></li>
-                <li id="nav-tour"><a a href="../controller/controller.php?method=faq">FAQ</a></li>
+				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=2" ><?php echo $lang->HOME?></a></li>
+				
+                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
 
 			</ul>
 		</nav>
@@ -54,10 +55,20 @@ session_start();
 <div id="gradient">
 </div>
 </div><br/><br/><br/>
+<div style="margin-left:500px">
+    <?php if(isset($_SESSION["msgErrors"]['int'])){
+    echo "<p style='color:red;'>".$_SESSION["msgErrors"]['int']."(s)";
+   echo "<br/>No of question must be less than you have";
+   echo "<br/>Negative marking must be less or equal to zero";
+     echo "<br/>time must be more thane zero </p> ";
+   unset($_SESSION["msgErrors"]['int']);
+ 
+}
+?>  
+</div>
 <form class="expose" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=settest" method="POST">
 <div style="background-image: url(../images/professor-at-desk.png); background-repeat: no-repeat;height:600px;width:600px; ">
-<?php if(isset($_SESSION["msgErrors"]['int']))
-    echo $_SESSION["msgErrors"]['int'];?>    
+  
 <table align="right">
 
 <tr><td>No Of Questions:</td></tr><tr><td><input type="number" name="noofques" required="required" min="1" max="<?php echo $_REQUEST['noq']?>"/></td></tr>

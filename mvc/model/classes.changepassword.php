@@ -44,12 +44,12 @@ public function CheckCurrentPassword(){
 			//return
             $this->db->Select ();
 			if ($this->db->resultArray ()){
-				//echo "hi";
+				
 				return 1;
 				//die;
 			}
 			else{
-				echo "hello";
+				
 				return 0;
 				//die;
 			}

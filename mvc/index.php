@@ -1,23 +1,66 @@
 <?php
 session_start();
+include_once 'lang/constant.php';
 $_SESSION['basepath']='http://localhost/../../';
 
 //session_start();
 if(isset($_REQUEST['msg'])){
     echo '<script type="text/javascript">alert("Feedback Recorded"); </script>';
+
+    unset($_REQUEST['msg']);
 }
-unset($_REQUEST['msg']);
+
+
 if(isset($_SESSION['uname'])){
  header("Location:view/view.php?flag=".$_SESSION['flag']);
 }
 
 
-	
-		 
-		
 ?>
+
+<script src="../fancybox/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {	
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+    $("#forgot").fancybox({
+            'width'            : width/2 ,
+            'height'        : height/2-170,
+            'autoScale'        : false,
+            'transitionIn'        : 'none',
+            'transitionOut'        : 'none',
+            'type'            : 'iframe',
+            'overlayColor': 'white',
+            'margin':'180'
+    });
+});
+</script>
+<link href="../fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css">
+<script src="../fancybox/jquery.fancybox-1.3.4.js"></script>
+<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
 <html class="js canvas canvastext rgba borderradius boxshadow textshadow cssanimations cssgradients csstransitions fontface video wf-arvo-n4-active wf-arvo-n7-active wf-annieuseyourtelescope-n4-inactive wf-active" lang="en"><!--<![endif]--><head>
-<title>Online Portal For Examination</title>
+<title><?php echo $lang->SITENAME?></title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<script src="fancybox/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {	
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+    $("#forgot").fancybox({
+            'width'            : width/2 ,
+            'height'        : height/2-170,
+            'autoScale'        : false,
+            'transitionIn'        : 'none',
+            'transitionOut'        : 'none',
+            'type'            : 'iframe',
+            'overlayColor': 'transparent',
+            'margin':'180'
+    });
+});
+</script>
 
 <link href="css/all-317f9ee386b1fa9b62cc328db4b940a7.css" media="all" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/flexslider.css">
@@ -31,7 +74,8 @@ if(isset($_SESSION['uname'])){
 
 <link href="css/css_004.css" rel="stylesheet">
 <script id="twitterlib1362133953873" src="html/user_timeline.html"></script>
-
+<script src="fancybox/jquery.fancybox-1.3.4.js"></script>
+<script src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 </head>    
     
     
@@ -43,29 +87,31 @@ if(isset($_SESSION['uname'])){
         <div style="display: block;" class="drop-panel" >
             <div class="container" >
                 <div class="two-thirds column" >
-                    <h3>Ready to login?</h3>
-                    <p class="nobottom">Welcome</p>
-                    <p class="nobottom">The true sign of intelligence is not knowledge but imagination.
+                    <h3><?php echo $lang->READYTOLOGIN?></h3>
+                    <p class="nobottom"><?php $lang->WELCOME?></p>
+                    <p class="nobottom"><?php echo $lang->QUOTE?>.
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        --- Albert Einstein ---</p>
+                        <?php echo $lang->ELBERT?></p>
                 </div>
                 <div class="one-third column" style="text-align:center;">
-                    <div class="tagline medium notop">Please select login</div>
+                    <div class="tagline medium notop"><?php echo $lang->PLEASESELECTLOGIN?></div>
 						<span>
-						        <a href="view/teacher_login.html" rel="#overlay" style="text-decoration:none"><button type="button">Teacher Login</button></a>
-							<a href="view/student_login.html" rel="#overlay" style="text-decoration:none"><button type="button">Student Login</button></a>
+						        <a href="view/teacher_login.php" rel="#overlay" style="text-decoration:none"><button type="button"><?php echo $lang->TEACHERLOGIN?></button></a>
+							<a href="view/student_login.php" rel="#overlay" style="text-decoration:none"><button type="button"><?php echo $lang->STUDENTLOGIN?></button></a>
 							<div class="apple_overlay" id="overlay">
                                                           <!-- the external content is loaded inside this tag -->
                                                         <div class="contentWrap"></div>
                                                         </div>
-                                                </span>		
+                                                </span>
+                    
+                    
                 </div>
             </div>
         </div>
     	<div class="drop-bar-container">
     		<div class="container">
     			<div class="drop-bar sixteen columns far-edge">
-					<a href="#" id="drop-panel-expando">Login +</a>
+					<a href="#" id="drop-panel-expando"><?php echo $lang->LOGIN?></a>
 				</div>
 			</div>
 		</div>
@@ -80,10 +126,10 @@ if(isset($_SESSION['uname'])){
 	    <nav id="main-nav" class="two-thirds column omega">
 	      	<a href="#main-nav-menu" class="mobile-menu-button button">+ Menu</a>
 		    <ul id="main-nav-menu" class="nav-menu">
-		        <li id="nav-home"><a href="index.php">Home</a></li>
-		        <li id="nav-tour"><a href="controller/controller.php?method=sampleTest" target="_top">Sample Test</a></li>
-		        <li id="nav-support"><a href="#" target="_top">Support</a></li>
-		        <li id="nav-prices"><a href="controller/controller.php?method=faq" target="_top">FAQ</a></li>
+		        <li id="nav-home"><a href="index.php"><?php echo $lang->HOME?></a></li>
+		        <li id="nav-tour"><a href="controller/controller.php?method=sampleTest" target="_top"><?php echo $lang->SAMPLETEST?></a></li>
+		        <li id="nav-support"><a href="#" target="_top"><?php echo $lang->SUPPORT?></a></li>
+		        <li id="nav-prices"><a href="controller/controller.php?method=faq" target="_top"><?php echo $lang->FAQ?></a></li>
 		    </ul>
 	    </nav>  
 	</div>
@@ -100,16 +146,16 @@ if(isset($_SESSION['uname'])){
 				<img src="images/image04.png" alt="">
 				<span class="decoration04">decoration</span>
 				<div style="right: 40px; top: 60px;" class="container">
-					<h2 class="txt-question2">Use Exam Professor to...</h2>
+					<h2 class="txt-question2">Use Open to...</h2>
 					<h3 class="txt-answer4">Make money!</h3>
 					<div class="holder">
-					<p style="display: none;" class="info-mobile1">Use Exam Professor to make money!
+					<p style="display: none;" class="info-mobile1">Use Open to make money!
 						<a href="#" title="Sign Up"><img src="images/btn-learn-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-					<p style="display: none;" class="info-mobile2">Exam Professor enables students to self-register at your site for free, or by using any major credit card.
+					<p style="display: none;" class="info-mobile2">Open enables students to self-register at your site for free, or by using any major credit card.
 						<a href="#" title="Sign Up"><img src="images/btn-learn-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-					<p class="info">Exam Professor enables your students to 
+					<p class="info">Open enables your students to 
 self-register at your site for free, or by using any major credit card. 
-With Exam Professor you can build, deploy, and collect payment with 
+With Open you can build, deploy, and collect payment with 
 professionalism in only a few short minutes.</p>
 					</div>
 					<ul class="links-list">
@@ -126,9 +172,9 @@ professionalism in only a few short minutes.</p>
 					<div class="holder">
 						<p style="display: none;" class="info-mobile1">Want to publish exams online? We've got the answer!
 							<a href="#" title="Sign Up"><img src="images/btn-signup-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-						<p style="display: none;" class="info-mobile2">Exam Professor is a web-based tool that allows you to build, embed, and manage your own exams.
+						<p style="display: none;" class="info-mobile2">Open is a web-based tool that allows you to build, embed, and manage your own exams.
 							<a href="#" title="Sign Up"><img src="images/btn-signup-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-						<p class="info">Exam Professor is a web-based tool that allows you
+						<p class="info">Open is a web-based tool that allows you
  to build, embed, and manage your own exams, tests or quizzes (or drill 
 and practice) quickly and easily. From professors setting up their final
  exam to small businesses training employees, Exam Professor is a breeze
@@ -143,14 +189,14 @@ and practice) quickly and easily. From professors setting up their final
 	    	<li style="width: 940px; float: left; display: block;">
 				<img src="images/image02.png" alt="">
 				<div style="right: 40px; top: 60px;" class="container">
-					<h2 class="txt-question2">Use exam professor to...</h2>
+					<h2 class="txt-question2">Use Open to...</h2>
 					<h3 class="txt-answer2">Offer web exams!</h3>
 					<div class="holder">
-						<p style="display: none;" class="info-mobile1">Use Exam Professor to offer web exams!
+						<p style="display: none;" class="info-mobile1">Use Open to offer web exams!
 							<a href="#" title="Sign Up"><img src="images/btn-learn-mobile.png" alt="sign up" class="btn-learn-mobile-ro"></a></p>
 						<p style="display: none;" class="info-mobile2">Exam Professor is an easy way to create high-quality quizzes and add them to any site.
 							<a href="#" title="Sign Up"><img src="images/btn-learn-mobile.png" alt="sign up" class="btn-learn-mobile-ro"></a></p>
-						<p class="info">Exam Professor is an easy way to create 
+						<p class="info">Open is an easy way to create 
 high-quality quizzes and add them to any site. You can embed individual 
 exams or the entire student interface, and customize the color and logo 
 to match your site.</p>
@@ -168,9 +214,9 @@ to match your site.</p>
 					<div class="holder">
 						<p style="display: none;" class="info-mobile1">It is perfect for training!
 							<a href="#" title="Sign Up"><img src="images/btn-signup-mobile.png" alt="sign up" class="btn-learn-mobile-ro"></a></p>
-						<p style="display: none;" class="info-mobile2">Exam Professor is used by educators, non-profits, and businesses.
+						<p style="display: none;" class="info-mobile2">Open is used by educators, non-profits, and businesses.
 							<a href="#" title="Sign Up"><img src="images/btn-signup-mobile.png" alt="sign up" class="btn-learn-mobile-ro"></a></p>
-						<p class="info">Exam Professor is used by educators, non-profits, 
+						<p class="info">Open is used by educators, non-profits, 
 businesses, and other professionals who need an easy way to publish 
 exams, tests, and quizzes online quickly.</p>
 					</div>
@@ -183,15 +229,14 @@ exams, tests, and quizzes online quickly.</p>
 				<img src="images/image04.png" alt="">
 				<span class="decoration04">decoration</span>
 				<div style="right: 40px; top: 60px;" class="container">
-					<h2 class="txt-question2">Use Exam Professor to...</h2>
+					<h2 class="txt-question2">Use Open to...</h2>
 					<h3 class="txt-answer4">Make money!</h3>
 					<div class="holder">
-					<p style="display: none;" class="info-mobile1">Use Exam Professor to make money!
+					<p style="display: none;" class="info-mobile1">Use Open to make money!
 						<a href="#" title="Sign Up"><img src="images/btn-learn-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-					<p style="display: none;" class="info-mobile2">Exam Professor enables students to self-register at your site for free, or by using any major credit card.
+					<p style="display: none;" class="info-mobile2">Open enables students to self-register at your site for free, or by using any major credit card.
 						<a href="#" title="Sign Up"><img src="images/btn-learn-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-					<p class="info">Open enables students to 
-self-register for free.</p>
+					<p class="info"><?php echo $lang->QUOTE2?>s</p>
 					</div>
 					<ul class="links-list">
 						<li><a class="btn-learn" href="#" title="Learn More"><img src="images/btn-learn.png" class="btn-learn-ro" alt="learn more"></a></li>
@@ -209,9 +254,7 @@ self-register for free.</p>
 							<a href="#" title="Sign Up"><img src="images/btn-signup-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
 						<p style="display: none;" class="info-mobile2">Exam Professor is a web-based tool that allows you to build, embed, and manage your own exams.
 							<a href="#" title="Sign Up"><img src="images/btn-signup-mobile.png" alt="sign up" class="btn-signup-mobile-ro"></a></p>
-						<p class="info">Open is a web-based tool that allows you
- to build, embed, and manage your own exams, tests or quizzes (or drill 
-and practice) quickly and easily. </p>
+						<p class="info"><?php echo $lang->QUOTE3?></p>
 					</div>
 					<ul class="links-list">
 						<li><a class="btn-signup" href="view/register.php" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
@@ -275,20 +318,14 @@ and practice) quickly and easily. </p>
 <div class="portfolio col-2">
 	<article class="portfolio-item eight columns left">
 		<h3 class="txt-what">What is it?</h3>
-		<p>Open is a web-based tool that allows you to build, embed,
- sell access to, and manage your own exams, tests or quizzes (or drill 
-and practice) quickly and easily.</p>
-		<p>From professors setting up their final exam to small businesses 
-training employees, Open is simple, powerful and a breeze to 
-use.</p>
+		<p><?php echo $lang->QUOTE3?></p>
+		<p><?php echo $lang->QUOTE4?>.</p>
 		<p><a class="btn-learn" href="#" title="Learn More"><img src="images/btn-learn.png" class="btn-learn-ro" alt="Learn More"></a></p>
 	</article>
 	<article class="portfolio-item eight columns">
 		<h3 class="txt-signup">Sign-up in two minutes</h3>
-		<p>Open is offered in five plans that range from FREE (which
- only lets you manage 1 exam) to $9 / month up to $99 / month for 
-unlimited exams. All paying plans include a 30-day free trial.</p>
-		<p>Simply pay by the month with your credit card, then change plans or even cancel your account at any time.</p>
+		<p><?php echo $lang->QUOTE5?></p>
+		<p><?php echo $lang->QUOTE6?></p>
 		<p><a class="btn-signup" href="view/register.php" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="Sign Up"></a></p>
 	</article>
 </div>
@@ -297,8 +334,7 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
 
 <!-- Tagline -->
 <div class="tagline">
-	<strong>Open</strong> is a feature rich, fully responsive, exam management engine.<br>
-	Simple.  Beautiful.  Powerful.
+	<strong>Open</strong> <?php echo $lang->QUOTE7?>
 	<span class="fleuron"></span>
 </div>
 <!-- end Tagline -->
@@ -313,10 +349,9 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
 	<div class="footer-upper container">
 	
 		<div class="one-third column manifesto">
-			<h2>Our Manifesto</h2>
-			<p>We believe creating a high quality product is a way to pay respect
- and responsibility to the customer and the user of the product.</p>
-			<p>We love building quality solutions!</p>
+			<h2><?php echo $lang->OURMANIFESTO?></h2>
+			<p><?php echo $lang->QUOTE8?></p>
+			<p><?php echo $lang->QUOTE9?></p>
 			<p class="contact-info">
 				<div class="clear"></div>
 				
@@ -352,18 +387,18 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
                         
     <div class="label">
         <img src="images/email_icon.png" alt="">
-        <h3>Send Us An Email<span>Please allow up to 24 hours for a reply</span></h3>
+        <h3><?php echo $lang->SENDUSEMAIL?><span><?php echo $lang->QUOTE10?></span></h3>
     </div>
-    <form id="contact_form" action="http://localhost/Open/trunk/mvc/controller/controller.php?method=feedback" method="post">
+    <form action="controller/controller.php?method=feedback" method="post">
         
         <input name="spam_check" value="" type="hidden">
         <fieldset>
-            Name<input name="name" id="name" tabindex="1" type="text" required="required">
+            <?php echo $lang->NAME?><input name="name" tabindex="1" type="text" required="required">
             <?php if(isset($_SESSION["msgErrors"][0])) {?>
             <label style="font-size:8px; background-color: red;"><b><?php print_r($_SESSION["msgErrors"][0]); ?></label> 
 	    <?php } ?> 
 	          
-            Email<input name="email" id="email" tabindex="2" type="email" required="required">
+            <?php echo $lang->EMAIL?><input name="email" id="email" tabindex="2" type="email" required="required">
             <?php if(isset($_SESSION["msgErrors"][1])) {?>
             <label style="font-size:8px; background-color: red;"><?php print_r($_SESSION["msgErrors"][1]); ?></label> 
 	    <?php } 
@@ -371,11 +406,11 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
             ?>
         </fieldset>
         <fieldset>
-            Message<textarea name="message" id="message" rows="" cols="" tabindex="3"></textarea>
+            <?php echo $lang->MESSAGE?><textarea name="message" id="message" rows="" cols="" tabindex="3"></textarea>
         </fieldset>
         <div>
             <br/>
-            <button class="button button-half" name="submit" type="submit" id="submit" tabindex="4" value="">Send</button>
+            <button class="button button-half" name="submit" type="submit" id="submit" tabindex="4" value=""><?php echo $lang->SEND?></button>
         </div>
     </form>
 	<div id="contact_form_target"></div>
@@ -391,10 +426,10 @@ unlimited exams. All paying plans include a 30-day free trial.</p>
 	<div id="footer-base">
 		<div class="container">
 			<div class="eight columns">
-				Noida - India
+				<?php echo $lang->NOIDA?>
 			</div>
 			<div class="eight columns far-edge">
-				An <a href="http://www.osscube.com/"> OSSCube </a> Product @
+				<?php echo $lang->AN?> <a href="http://www.osscube.com/"><?php echo $lang->OSSCUBE?> </a><?php echo $lang->PRODUCT?>
 			</div>
 		</div>
 	</div>

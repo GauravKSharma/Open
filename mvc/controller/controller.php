@@ -197,9 +197,7 @@ class MyClass {
 	   -----------------------------------------------------
 	*/
 	
-	
-		 
-		public function settest(){
+	public function settest(){
 		 
 		if(isset($_POST) > 0){
 			require_once("../model/classes.settest.php");
@@ -208,7 +206,7 @@ class MyClass {
 			$settest = new settest();
                         $max=$_REQUEST['noq'];
                         //echo $max;
-			if($validate->is_validInt($_POST['noofques'],1,$max) && $validate->is_validInt($_POST['time'],1,300) && $validate->is_validInt($_POST['negative'],-32767,0) && $validate->is_validEmail($_POST ["email"])){
+	if($validate->is_validInt($_POST['noofques'],1,$max) && $validate->is_validInt($_POST['time'],1,300) && $validate->is_validInt($_POST['negative'],-32767,0) && ($_POST ["email"]=$validate->is_validEmail($_POST ["email"]))){
 			$settest->setTeacher_name($_SESSION['uname']);
 			$settest->setTesttype($_POST['test']);
 			$settest->setNo_of_questions($_POST['noofques']);
@@ -248,14 +246,14 @@ class MyClass {
 					echo 'Mailer error: ' . $mail->ErrorInfo;
 				}
 				else {
-					echo '<script type="text/javascript">alert("Link send successfully"); </script>';
-				  //  header("location:" .$link);
+					//echo '<script type="text/javascript">alert("Link send successfully"); </script>';
+				    header('location:http://localhost/Open/trunk/mvc/view/view.php?flag=2&msg="succesful"');
 				}
 			}
 			
 			}
                         else{
-                            header('location:http://localhost/Open/trunk/mvc/view/view.php?flag=2');
+                            header('location:http://localhost/Open/trunk/mvc/view/selecttest.php?cat=2&noq=4');
                         }
 }
 	}
@@ -543,8 +541,7 @@ class MyClass {
     
     public function changePassword() {
         if(isset ($_SESSION['uname'])) {
-        	print_r($_SESSION['uname']);
-            //echo "hi";die;
+        	
             require_once("../model/classes.validation.php");
             require_once("../model/classes.changepassword.php");
             
@@ -571,6 +568,7 @@ class MyClass {
                }
             }
             else{
+                //echo "hi";die;
             	header("location:../view/changepassword.php?msg='Wrong Entry'");
             }
         } 
@@ -585,6 +583,7 @@ class MyClass {
 
 public function feedback() {
        if (isset($_POST)) {
+           
        	   require_once("../model/classes.validation.php");
            require_once("../model/classes.feedback.php");
            $feedback = new feedback();
@@ -599,7 +598,7 @@ public function feedback() {
            $feedback->setName($_POST["name"]);
          
            if (($feedback->AddFeedback())) {
-              header("location:..?msg='Feedback Recorded'");
+              header("location:..");
                }
            }
            else{
@@ -616,30 +615,48 @@ public function feedback() {
     public function login() {
        
         if (isset($_POST) && count($_POST) > 0) {
+            //print_r ($_POST ['user_type']);
             require_once ("../model/classes.login.php");
             $login = new logIn();
             $login->setUserName($_POST ["u_name"]);
             $login->setPassword($_POST ["pwd"]);
-
-            if (($login->FindUsers())) {
+            $find = $login->FindUsers();
+            
+            if ($find) {
                 $_SESSION ['uname'] = $_POST ["u_name"];
                 $result = array();
-                $result = $login->resultlogin();
+                $result = $find;
+                //print_r ($result);die;
+             
                
                 if ($result [0]['user_type'] == 2 && $_POST ['user_type'] == "teacher") {
                   header("location:../view/view.php?flag=2");
-                  } else if ($result [0]['user_type'] == 3 && $_POST ['user_type'] == "student") {
+                  } 
+                else if ($result [0]['user_type'] == 3 && $_POST ['user_type'] == "student") {
                     header("location:../view/view.php?flag=3");
                 }
                 else if ($result [0]['user_type'] == 3 && $_POST ['type'] == "test") {
                     header("location:../view/testInstructions.php");
                 }
                 else {
-                    $header = header ( "location:../index.php" );
+                    if($_POST ['user_type'] == "student"){
+                   header ( "location:../view/student_login.php" );}
+                   
+                   else {
+                     header ( "location:../view/teacher_login.php" );}
+            
+                   }
+            
                 }
-            }
-        } else {
-            header ( "location:../index.php" );
+            
+        else {
+            if ($_POST ['type'] == "test") {
+                   header ( "location:../view/studentinfo.php" );
+    
+                     }
+                     else
+            header ( "location:../mainpage.php" );
+        }
         }
     }
 /* --------------------------------------------------------------
@@ -677,20 +694,6 @@ public function feedback() {
             
            require_once("../model/classes.validation.php");
            require_once("../model/classes.register.php");
-//           $check = new Register();
-//           
-//            
-//           $check->setUserName($_POST ["u_name"]);
-//           
-//           $get=$check->checkUnique();
-//           
-//            if($get){
-//                echo "User name already exists";
-//            }
-//            else{
-//             }
-           
-            
             $Validation = new validate();
             session_unset("msgErrors");
             
@@ -767,15 +770,15 @@ public function feedback() {
     	 $b= $startTest->fetchTestInfo();
           
     	  $a=$startTest->sample_question();
-          //print_r($b);
           $_SESSION['test']=$a;
           $_SESSION['test1']=$b;
-        //  print_r($a);die;
-          //$startTest->quesAns();
+       
           $start=0;
     	  include('../view/studentInfo.php');
     	  
     }
+    
+    
        public function result(){
     	require_once("../model/classes.result.php");
     	$result=new result();

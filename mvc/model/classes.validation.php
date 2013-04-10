@@ -12,10 +12,13 @@ class validate{
 						"max_range"=>$max
 				)
 		);
-		 
+		 if($int===0 && $min<=0 && $max>=0)
+                     return true;
+                 else if($int==0)
+                     return false;
 		if(!filter_var($int, FILTER_VALIDATE_INT, $int_options))
 		{
-			$_SESSION ["msgErrors"] [] = '<p class="errText">Not a valid value.</p>';
+			$_SESSION ["msgErrors"] ['int'] = 'Not  valid value.';
 			return false;
 		}
 		else
@@ -143,7 +146,7 @@ public function is_validEmail($email){
 	public function is_validPhone($phone){
 		$phone=filter_var($phone, FILTER_SANITIZE_STRING);
 		if(preg_match("/^[7-9][0-9]{9}$/", $phone) == 0){
-			$_SESSION["msgErrors"]['int']= '<p class="errText">Phone Number must  comply with this mask: first digit greater than 6 and number must be 10 digits.</p>';
+			$_SESSION["msgErrors"][]= '<p class="errText">Phone Number must  comply with this mask: first digit greater than 6 and number must be 10 digits.</p>';
 			
 			return false;
 	}
@@ -155,5 +158,6 @@ public function is_validEmail($email){
 
 }
 }
+
 
 ?>

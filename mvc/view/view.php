@@ -1,6 +1,13 @@
 <?php
+include '../lang/constant.php';
 session_start();
 
+
+
+if(isset($_REQUEST['msg'])){
+    echo '<script type="text/javascript">alert("Link sent successfully"); </script>';
+}
+unset($_REQUEST['msg']);
 
 include('header1.php');
 
@@ -22,8 +29,8 @@ include ('../view/loginsuccess_student.php');
 }
 
 else{
-	header("location:../index.php");
+	header("location:../mainpage.php");
 }
 
-
+include('footer1.php');
 ?>

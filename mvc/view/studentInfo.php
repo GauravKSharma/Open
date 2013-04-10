@@ -6,35 +6,58 @@ if(! isset($_post['submit'])){
 <html>
     <title>Student Login</title>
     <head>
-        <link href="overlay-apple.css" rel="stylesheet" type="text/css">
-            
+        
+        <script>
+    function openwindow(){
+	window.open("forgotPassword.php","popup3","width=500, height=400");
+			}
+    </script>
+
+        <style>
+       form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	margin: 140px auto;
+	text-align: center;
+	width: 500px;
+	-moz-border-radius: 4px;
+        height:350px;
+        background-image: url(../images/bkg-plans.png);
+        
+       
+        
+       
+        
+}
+
+</style>
     </head>
     
-   <body>
-    <div id="overlay" class="apple_overlay" style="position: fixed; z-index: 30000; background-image: none; top: 155px; left: 324px; right: 324px; display: block;">
-        <a class="close" href="index.php" style="float:right;"><img src="images/close.png" alt="close" height="40px" width="40px"></a>
-     <div class="contentWrap" style="background-color:#6495ED;">
-    
-     
-     <hr/>
-   <form action="http://localhost/Open/trunk/mvc/controller/controller.php?method=login" method="post">
+   <body style="background-color:#D0D0D0 ;">
+    <div  style="height:30px;width:100%;margin-top: 8px;background-color:#383838 ;"><br/><br/><br/><br/>
+   <form id="myform" class="expose" action="../controller/controller.php?method=login" method="post">
   <pre/>
      
-    <h5>UserName</h5>
-    <input type="passwd" name="u_name"><br/>
-    <h5>Password</h5>
-    <input type="passwd" name="pwd"><br/>
-      
+    <div style="background-image: url(../images/professor-blog.png); background-repeat: no-repeat;width:500px;height:330px; ">
+     <table align="right" cellspacing="5px";>
+     <tr>
+     	<td><b>Username</b></td>
+     	<td><input type="text" name="u_name"></td>
+    </tr>
+     <tr>
+     	<td><b>Password</b></td>
+        <td><input type="password" name="pwd" id="pwd"/></td>
+    </tr>
+     
     
-   
+    <tr><td></td><td><input type="checkbox">Remember Password</td></tr>
     
- 
-    <input type="hidden" name="type" value="test" />
-    <input type="submit" value="submit">
-    </form>
-    
-    </div>
-    </div>
+    <tr><td></td><td><a href="#" onclick="openwindow();">Forgot Password?</a></td></tr>
+    <tr><td><input type="hidden" name="type" value="test" /></td></tr><tr></tr><tr></tr>
+    <tr><td></td><td><b><input type="submit" value="Login" style="background-color: #909090;height: 30px;width:100px;color: white;font-size: 15px;"></b></td></tr>
+    </table>
+     </div>
    </body>
 </html>   
 

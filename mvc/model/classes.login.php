@@ -47,7 +47,10 @@ class logIn extends model {
 					"password" => $this->getPassword () 
 			) );
 			
-			return $this->db->Select();
+			$this->db->Select();
+                        //echo $this->db->lastQuery();die;
+                        return $this->db->resultArray ();
+                        
 			
 		}
                 public function resultlogin() {

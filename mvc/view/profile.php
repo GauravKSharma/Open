@@ -1,6 +1,7 @@
 <?php
 //session_start();
- $row=mysql_fetch_assoc($get);
+include '../lang/constant.php';
+$row=mysql_fetch_assoc($get);
  
  
 ?>
@@ -8,14 +9,57 @@
 <html>
  
  <head>
-  <title>Profile Update</title>
+  <title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ 
+  <link rel="stylesheet" type="text/css" href="../css/test.css" />
+   <link rel="stylesheet" type="text/css"
+        href="../css/standalone.css"/>
+
+  <style>
+
+  
+
+ form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	margin: 100px auto;
+	text-align: center;
+	width: 600px;
+	-moz-border-radius: 4px;
+ 	
+        background-image: url(../images/bkg-plans.png);
+ 	background-repeat:no-repeat;
+   background-size: 1600px;
+ 	
+}
+   
+        
+
+</style>
  </head>
  
  <body>
-     <?php include('header1.php'); ?>
-     <div style="height: 400px;
-   overflow: auto; border:1px solid; margin:80px 300px;">
- <div style="background-color: red;">        
+     <?php include('header1.php'); ?><br/><br/><br/>
+     <img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
+     <header id="header" class="container">
+	<nav id="main-nav" class="two-thirds column omega">
+			<ul id="main-nav-menu" class="nav-menu">
+				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
+				
+                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
+
+			</ul>
+		</nav>
+</header>
+
+<div id="wrap">
+<div id="gradient">
+</div>
+</div>
+ 
+         
  <?php 
    if(isset($_SESSION["msgErrors"])){
      foreach($_SESSION["msgErrors"] as $key=>$value){
@@ -24,22 +68,30 @@
     unset($_SESSION["msgErrors"]);
  }?>
  </div>
-         <form action="../controller/controller.php?method=updateProfile" method="post" style="margin: 55px;">
-	    
-    <h2 style="text-align:center;">Profile View</h2>   
+
+     <form class="expose" action="../controller/controller.php?method=updateProfile" method="post">
+	  <table>
+    <tr><td><h2 style="text-align:center;"><?php echo $lang->PROFILEVIEW?></h2></td></tr>   
     
-    <p>User Name               <input type="text" name="u_name" value="<?php echo($row['user_name']) ?> " disabled="true" />  
-     </p>
-     <p>First Name              <input type="text" name="f_name" value="<?php echo ($row['firstname']) ?>"></p>
-     <p>Last Name               <input type="text" name="l_name" value="<?php echo ($row['lastname']) ?>"></p>
-     <p>Email                   <input type="email"  name="email" value="<?php echo ($row['email']) ?>"></p>
-     <p>Address                 <textarea rows="2" cols="17" name="address"><?php echo ($row['address']) ?></textarea></p>
-     <p>Phone No                <input type="text" name="phone" value="<?php echo ($row['phone_no']) ?>"></p>
-     <p>College/Company Name    <input type="text" name="cname"  value="<?php echo ($row['college_or_company']) ?>"></p>
-     <input type="Submit" value="Update" name="submit">  <input type="Submit" value="Cancel">
-   
+    
+    
+    <tr><td><?php echo $lang->USERNAME?></td>      <td> <input type="text" name="u_name" value="<?php echo($row['user_name']) ?> " disabled="true" /></td></tr>  
+     
+     <tr><td><?php echo $lang->FIRSTNAME?> </td>     <td><input type="text" name="f_name" value="<?php echo ($row['firstname']) ?>"></td></tr>
+     <tr><td><?php echo $lang->LASTNAME?></td>       <td><input type="text" name="l_name" value="<?php echo ($row['lastname']) ?>"></td></tr>
+     <tr><td><?php echo $lang->EMAIL?></td>          <td><input type="email"  name="email" value="<?php echo ($row['email']) ?>"></td></tr>
+     <tr><td><?php echo $lang->ADDRESS?></td>          <td><textarea rows="2" cols="17" name="address"><?php echo ($row['address']) ?></textarea></td></tr>
+     <tr><td><?php echo $lang->PHONENO?> </td>          <td> <input type="text" name="phone" value="<?php echo ($row['phone_no']) ?>"></td></tr>
+     <tr><td>College/Company Name</td>    <td><input type="text" name="cname"  value="<?php echo ($row['college_or_company']) ?>"></td></tr>
+     <tr><td></td><td><input type="Submit" value="Update" name="submit"></td><td><input type="Submit" value="Cancel"></td></tr>
+   </table>
    </form>
+  
+   
      </div>
+    <?php include 'footer1.php';?><br/>
+    
+    
  </body>
  
 </html>

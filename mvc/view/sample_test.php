@@ -37,7 +37,7 @@ function CheckTime(){
 document.getElementById("quiz-time-left").innerHTML='Time Left: ' + max_time + ' minutes ' + c_seconds + ' seconds' ;
 if(total_seconds <=0){
 sendresult();
-//setTimeout('document.quiz.submit()',1);
+setTimeout('document.quiz.submit()',1);
    
     } else
     {
@@ -52,16 +52,24 @@ setTimeout("CheckTime()",999);
 inis();
 </script>
 <script type="text/javascript">
-// function finishpage()
-//{
-//alert("unload event detected!");
-//document.quiz.submit();
-//}
-//window.onbeforeunload= function() {
-//setTimeout('document.quiz.submit()',1);
-//}
+ function finishpage()
+{
 
+document.quiz.submit();
+}
+window.onbeforeunload= function() {
+window.setTimeout('document.quiz.submit()',0);
+}
+function backButtonOverride()
+{
+  // Work around a Safari bug
+  // that sometimes produces a blank page
+  setTimeout("backButtonOverrideBody()", 1);
+
+}
+backButtonOverride();
 </script>
+<form action="" name="a"></form>
 
 <div id="mytable" style=" margin-left: 300px;margin-top: 100px;">
 

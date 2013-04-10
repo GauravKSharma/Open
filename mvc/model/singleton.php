@@ -251,7 +251,6 @@ class DBConnection {
         $this->_values="";
         $this->_join="";
         $this->_where="";
-	//$this->_query="";
     return $this->_result;
     }
     

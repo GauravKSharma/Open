@@ -1,16 +1,70 @@
 <?php 
+include '../lang/constant.php';
 if(isset($_REQUEST['msg'])){
 	echo '<script type="text/javascript">alert("Wrong Category Selected"); </script>';
 }
 unset($_REQUEST['msg']);
 ?>
 
-
 <html>
  
  <head>
-  <title>View Faq</title>
+  <title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/test.css" />
+   <link rel="stylesheet" type="text/css"
+        href="../css/standalone.css"/>
+
+  <style>
+
+  
+
+ form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	margin: 100px auto;
+	text-align: center;
+	width: 600px;
+	-moz-border-radius: 4px;
+ 	
+        background-image: url(../images/bkg-plans.png);
+ 	background-repeat:no-repeat;
+   background-size: 1600px;
+ 	
+}
+   
+        
+
+</style>
+  
+  <style>
+   li {
+    display: inline;
+   }
+   li a {
+    text-decoration: none;
+   }
+    
+       form.expose {
+	
+	background: #fff url(/media/img/gradient/h150.png) repeat-x;
+	padding: 20px;
+	
+	
+	width: 200px;
+	
+        
+        border: 1px outset #ccc;
+      
+        
+       
+        
+       
+        
+}
+  </style> 
   <script>
   function faq(fetch)
   {
@@ -34,55 +88,77 @@ unset($_REQUEST['msg']);
  </head>
  
  <body>
- <?php include 'header1.php'; ?>
-   <table>
-     <tr>
-      <td>
-      <?php 
-      if(isset($_SESSION['msgErrors'])){
-      foreach($_SESSION['msgErrors'] as $key=>$value){
-       print_r($_SESSION['msgErrors'][$key]); 
-       }
-      }
-      unset($_SESSION['msgErrors']);
-      ?>
-      </td><td></td>
-     </tr>
-     <tr>
-     <td>
-     <form action="../controller/controller.php?method=addQuestion" method="POST">    
-      Add your Query ?
-         <textarea rows="" cols="20" name="question" required="required"></textarea>
-      Select Category
-         <input type="number" name="category" />
-         <a href="#" onclick="openwindow();"> View Category Code </a><br/>
-                          <input type="Submit" value="Add Query"/>
-     </form>
-     </td>
-    </tr>
-   </table>
+     <?php
      
-    <div style="width: 1000px; height:500px;">
-     <div style="width: 450px; height:490px; float:left;">
-    <table>
+     if(isset($_SESSION['uname'])){
+      include 'header1.php'; }?>
+     
+     
+     <img src="../images/open_logo.png" height="50px" width="150px" style="margin-left: 80px;">
+     <header id="header" class="container">
+	<nav id="main-nav" class="two-thirds column omega">
+			<ul id="main-nav-menu" class="nav-menu">
+				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag']; ?>" ><?php echo $lang->HOME?></a></li>
+				
+                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
+
+			</ul>
+		</nav>
+</header>
+
+<div id="wrap">
+<div id="gradient">
+</div>
+</div>
+
+     
+  <div  style="height:30px;width:100%;margin-top: 8px;"><br/><br/><br/><br/>
+     
+     
+     
+    <div>
+     <div style="width:15%;height: 500px;border: 1px outset #ccc;float: left;">
+    <p>Category Related Question</p>
      
     <?php 
     $count = 0; 
     while($row=mysql_fetch_assoc($get)){ 
     $count ++;?>
-      <tr>   
-        <td><a href="#" onclick="faq(<?php echo $count; ?> )"><?php echo ($row['category_name']); ?></a></td>
-      </tr> 
+      <ul>
+       
+        <li> <div style="width: 20px;"><a href="#" onclick="faq(<?php echo $count; ?> )"><?php echo ($row['category_name']); ?></a></div></li>
+      </ul> 
         <?php }?>
         
           
-        </table>
+       
      </div>  
-         <div id="tab3" style="width: 450px; height:490px; float:right; overflow: scroll;">
+         <div id="tab3" style="width:70%; float: right;height: 40px;">
     
     
      </div> 
-     </div>     
+     
+    <div style="float: right;">
+   <form action="../controller/controller.php?method=addQuestion" method="POST" class="expose">
+      <table>
+     <tr>
+     <td>
+      <?php echo $lang->ADDYOURQUERY?>?</td></tr>
+         <tr><td><textarea rows="" cols="20" name="question" required="required"></textarea></td></tr>
+      <tr><td><?php echo $lang->SELECTCATEGORY?></td></tr>
+         <tr><td><input type="number" name="category" /></td></tr>
+         <tr><td><a href="#" onclick="openwindow();"> <?php echo $lang->VIEWCATEGORYCODE?> </a></td></tr>
+                              <tr><td><input type="Submit" value="Add Query"/></td></tr>
+      
+    
+   </table>
+     </form>
+    </div>
+     </div>
+    
+    
  </body>
  
 </html>
+
+   

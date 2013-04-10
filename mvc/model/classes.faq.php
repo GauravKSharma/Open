@@ -64,7 +64,7 @@ class faqResponse extends model {
 		
 	
 		$resul = $this->db->Select ();
-               // echo $this->db->lastQuery();die;
+               //echo $this->db->lastQuery();die;
 		
 		while ( $row = mysql_fetch_assoc ( $resul ) ) {
 			$ress .= "<img src='../images/400-myprofile.png' height=50px width=60px>";

@@ -138,7 +138,7 @@ foreach($this->chosenAns as $key=>$values){
    }
    else{
        
-      $marks=$marks+$negativeMarking;
+      $marks=$marks-$negativeMarking;
    }
   
 }

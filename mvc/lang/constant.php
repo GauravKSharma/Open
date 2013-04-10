@@ -19,8 +19,8 @@ if(isset($_SESSION['lang'])){
 }
 else
 {
-    $selectedLang='en';
+    $selectedLang='hin';
 }
-require_once "lang/$selectedLang.php";
+require_once "$selectedLang.php";
 $lang= new Language($_languageConstants);
 ?>

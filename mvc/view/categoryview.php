@@ -1,6 +1,10 @@
+<?php
+include '../lang/constant.php';
+?>
 <html>
 <head>
-<title>View Category Code</title>
+<title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
@@ -12,8 +16,8 @@ $values = $result->category();
 ?>
 <table border='1' align="center">
  <tr>
-  <td>ID</td>
-  <td>Category</td>
+  <td><?php echo $lang->ID?></td>
+  <td><?php echo $lang->CATEGORY?></td>
  </tr>
 <?php
 while ($data = mysql_fetch_assoc($values)){

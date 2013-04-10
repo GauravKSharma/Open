@@ -1,6 +1,10 @@
-<html class="js canvas canvastext rgba borderradius boxshadow textshadow cssanimations cssgradients csstransitions fontface video wf-arvo-n4-active wf-arvo-n7-active wf-annieuseyourtelescope-n4-inactive wf-active" lang="en"><!--<![endif]--><head>
-<title>Meet The Team</title>
+<?php
+include '../lang/constant.php';
+?>
 
+<html class="js canvas canvastext rgba borderradius boxshadow textshadow cssanimations cssgradients csstransitions fontface video wf-arvo-n4-active wf-arvo-n7-active wf-annieuseyourtelescope-n4-inactive wf-active" lang="en"><!--<![endif]--><head>
+<title><?php echo $lang->SITENAME?></title>     
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <link href="../css/all-317f9ee386b1fa9b62cc328db4b940a7.css" media="all" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../css/flexslider.css">
 <link rel="stylesheet" href="../css/prettyPhoto.css">
