@@ -60,7 +60,7 @@ session_start();
     <?php if(isset($_SESSION["msgErrors"]['int'])){
     echo "<p style='color:red;'>".$_SESSION["msgErrors"]['int']."(s)";
    echo "<br/>No of question must be less than you have";
-   echo "<br/>Negative marking must be less or equal to zero";
+   echo "<br/>Negative marking must be between or equal to 0 to 1";
      echo "<br/>time must be more thane zero </p> ";
    unset($_SESSION["msgErrors"]['int']);
  

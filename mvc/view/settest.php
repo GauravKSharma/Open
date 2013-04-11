@@ -54,7 +54,7 @@ table td, table th
    <?php while($row=mysql_fetch_assoc($get)){
        ?>
     <tr>
-        <td><a href="../view/selecttest.php?cat=<?php echo ($row['category_id']);?>">Select</a></td>
+        <td><a href="../view/selecttest.php?cat=<?php echo ($row['category_id']);?>&noq=<?php echo ($row['no_questions']); ?>">Select</a></td>
         <td><?php echo ($row['category_id']); ?></td>
         <td><?php echo ($row['no_questions']); ?></td>
         <td><?php echo ($row['created_on']); ?></td>

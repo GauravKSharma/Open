@@ -211,13 +211,18 @@ class MyClass {
 			$validate=new validate();
 			$settest = new settest();
                         $max=$_REQUEST['noq'];
+                        $negative=$_POST['negative'];
+                        if($negative==0)
+                        {
+                            $negative=1;
+                        }
                         //echo $max;
-	if($validate->is_validInt($_POST['noofques'],1,$max) && $validate->is_validInt($_POST['time'],1,300) && $validate->is_validInt($_POST['negative'],-32767,0) && ($_POST ["email"]=$validate->is_validEmail($_POST ["email"]))){
+	if($validate->is_validInt($_POST['noofques'],1,$max) && $validate->is_validInt($_POST['time'],1,300) && $validate->is_validFloat($negative,0,1) && ($_POST ["email"]=$validate->is_validEmail($_POST ["email"]))){
 			$settest->setTeacher_name($_SESSION['uname']);
 			$settest->setTesttype($_POST['test']);
 			$settest->setNo_of_questions($_POST['noofques']);
 			$settest->setTime($_POST['time']);
-			$settest->setNegativeMarkincheckUsg($_POST['negative']);
+			$settest->setNegativeMarking($_POST['negative']);
 			$settest->setCategory_id($_POST['cat']);
 			$settest->teacherId();
 			$settest->saveTest();

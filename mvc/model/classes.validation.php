@@ -3,7 +3,20 @@
 class validate{
 	
 	protected $errName;
-
+public function is_validFloat($float,$min=0,$max=32767){
+   if(filter_var($float, FILTER_VALIDATE_FLOAT)){
+       if($float<=$max && $float>=$min)
+       return true;
+       else{
+           $_SESSION ["msgErrors"] ['int'] = 'Not  valid value.';
+       return false; 
+       }
+   }
+   else{
+       $_SESSION ["msgErrors"] ['int'] = 'Not  valid value.';
+       return false;
+   }
+}
   public function is_validInt($int,$min=0,$max=32767){
 		$int_options = array(
 				"options"=>array
@@ -14,8 +27,7 @@ class validate{
 		);
 		 if($int===0 && $min<=0 && $max>=0)
                      return true;
-                 else if($int==0)
-                     return false;
+                
 		if(!filter_var($int, FILTER_VALIDATE_INT, $int_options))
 		{
 			$_SESSION ["msgErrors"] ['int'] = 'Not  valid value.';
@@ -158,6 +170,10 @@ public function is_validEmail($email){
 
 }
 }
-
+//$a=new validate();
+//if($a->is_validInt(0,-32767,0))
+//        echo "hiii";
+//else
+//    echo "byeee";
 
 ?>
