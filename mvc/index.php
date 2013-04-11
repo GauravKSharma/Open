@@ -79,8 +79,8 @@ success: function(data){
                                                 </span>
                                                 
                                                
- <select id="type" style="width:110px;" onchange="selectLang(value)">
- <option selected>utf-8</option>
+ <select id="type" style="width:85px;" onchange="selectLang(value)">
+ <option selected>Language</option>
  <option value="en">English</option>
  <option value="hin">Hindi</option>
  </select>                                   
@@ -107,7 +107,7 @@ success: function(data){
 	    <nav id="main-nav" class="two-thirds column omega">
 	      	<a href="#main-nav-menu" class="mobile-menu-button button">+ Menu</a>
 		    <ul id="main-nav-menu" class="nav-menu">
-		        <li id="nav-home"><a href="index.php"><?php echo $lang->HOME?></a></li>
+		        <li id="nav-home"><a href="mainpage.php"><?php echo $lang->HOME?></a></li>
 		        <li id="nav-tour"><a href="requesthandler/sampleTest" target="_top"><?php echo $lang->SAMPLETEST?></a></li>
 		        <li id="nav-support"><a href="#" target="_top"><?php echo $lang->SUPPORT?></a></li>
 		        <li id="nav-prices"><a href="http://localhost/Open/trunk/mvc/requesthandler/faq" target="_top"><?php echo $lang->FAQ?></a></li>
@@ -238,7 +238,7 @@ exams, tests, and quizzes online quickly.</p>
 						<p class="info"><?php echo $lang->QUOTE3?></p>
 					</div>
 					<ul class="links-list">
-						<li><a class="btn-signup" href="view/register.php" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
+						<li><a class="btn-signup" href="http://localhost/Open/trunk/mvc/register" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="sign up"></a></li>
 						<li><a class="btn-learn1" href="#" title="Learn More"><img src="images/btn-learn.png" class="btn-learn-ro" alt="learn more"></a></li>
 					</ul>
 				</div>
@@ -307,7 +307,7 @@ exams, tests, and quizzes online quickly.</p>
 		<h3 class="txt-signup">Sign-up in two minutes</h3>
 		<p><?php echo $lang->QUOTE5?></p>
 		<p><?php echo $lang->QUOTE6?></p>
-		<p><a class="btn-signup" href="view/register.php" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="Sign Up"></a></p>
+		<p><a class="btn-signup" href="http://localhost/Open/trunk/mvc/register" title="Sign Up"><img src="images/btn-signup.png" class="btn-signup-ro" alt="Sign Up"></a></p>
 	</article>
 </div>
 

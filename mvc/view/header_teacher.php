@@ -31,7 +31,7 @@ function upload()
   {
   $.ajax({
   type: "POST",
-  url: 'uploadpaper.php',
+  url: 'http://localhost/Open/trunk/mvc/view/uploadpaper.php',
   //data: $('#frmid').serialize(),
   //data:"value=" + fetch,
 
@@ -87,7 +87,7 @@ $("#tab2").html(data);
 				<li id="nav-support"><a href="#" onclick="setTest()"><?php echo $lang->SETTEST?></a></li>
 				<li id="nav-tour"><a href="#" onclick="viewResultTeacher()"><?php echo $lang->VIEWRESULT?></a></li>
 				<li id="nav-support"><a href="#" onclick="upload()"><?php echo $lang->UPLOADPAPER?></a></li>
-                <li id="nav-tour"><a a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
+                <li id="nav-tour"><a a href="http://localhost/Open/trunk/mvc/requesthandler/faq"><?php echo $lang->FAQ?></a></li>
 
 			</ul>
 		</nav>

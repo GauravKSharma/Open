@@ -67,6 +67,7 @@ class faqResponse extends model {
                //echo $this->db->lastQuery();die;
 		
 		while ( $row = mysql_fetch_assoc ( $resul ) ) {
+                    $faqid=$row['id'];
 			$ress .= "<img src='../images/400-myprofile.png' height=50px width=60px>";
 			$ress .= "<b>";
                         $ress .= $row ['firstname'];

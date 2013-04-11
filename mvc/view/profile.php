@@ -83,7 +83,7 @@ $row=mysql_fetch_assoc($get);
      <tr><td><?php echo $lang->ADDRESS?></td>          <td><textarea rows="2" cols="17" name="address"><?php echo ($row['address']) ?></textarea></td></tr>
      <tr><td><?php echo $lang->PHONENO?> </td>          <td> <input type="text" name="phone" value="<?php echo ($row['phone_no']) ?>"></td></tr>
      <tr><td>College/Company Name</td>    <td><input type="text" name="cname"  value="<?php echo ($row['college_or_company']) ?>"></td></tr>
-     <tr><td></td><td><input type="Submit" value="Update" name="submit"></td><td><input type="Submit" value="Cancel"></td></tr>
+     <tr><td></td><td><input type="Submit" value="Update" name="submit"></td><td><input type="button" value="Cancel" onclick="cancel();"></td></tr>
    </table>
    </form>
   
@@ -96,3 +96,9 @@ $row=mysql_fetch_assoc($get);
  
 </html>
 
+
+<script>
+    function cancel(){
+        window.location="http://localhost/Open/trunk/mvc/user/<?php echo $_SESSION['flag']?>"
+    }
+    </script>

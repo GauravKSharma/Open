@@ -7,7 +7,7 @@ session_start();
 if(isset($_REQUEST['msg'])){
     echo '<script type="text/javascript">alert("Link sent successfully"); </script>';
     unset($_REQUEST['msg']);
-    header("location:view.php?flag=2");
+   // header("location:view.php?flag=2");
 }
 
 

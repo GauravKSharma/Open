@@ -1,13 +1,14 @@
 RewriteEngine on 
 RewriteRule ^testresult$  view/testResult.php [NC]
 RewriteRule ^user/([0-9])$  view/view.php?flag=$1  [NC]
-RewriteRule ^requesthandler/([a-zA-Z_]+)$  controller/controller.php?method=$1  [NC]
+RewriteRule ^requesthandler/(.*)$  controller/controller.php?method=$1  [NC]
 RewriteRule ^changepassword$ view/changepassword.php [NC]
 RewriteRule ^studentlogin$  view/student_login.php [NC]
 RewriteRule ^studentinfo$  view/studentinfo.php [NC]
 RewriteRule ^register$ view/register.php [NC]
 RewriteRule ^teacherlogin$ view/teacher_login.php [NC]
 RewriteRule ^logout$ view/logout.php [NC]
+RewriteRule ^user/(.*)/(.*)/(.*)$ view/$1\.php?$2=$3 [NC]
 
 RewriteRule ^mainpage\.php$  index.php  [NC]
 Options -Indexes

@@ -2,7 +2,7 @@
 
 session_start();
 include '../lang/constant.php';
-if(isset($_SESSION['uname'])){
+if(isset($_SESSION['uname']) && isset($_SESSION['flag'])){
    // print_r($_SESSION['uname']);
  header("location:view.php?flag=".$_SESSION['flag']);
 }

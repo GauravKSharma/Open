@@ -74,9 +74,9 @@ include('header1.php');
      <header id="header" class="container">
 	<nav id="main-nav" class="two-thirds column omega">
 			<ul id="main-nav-menu" class="nav-menu">
-				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=3" ><?php echo $lang->HOME?></a></li>
+				<li id="nav-home"><a href="http://localhost/Open/trunk/mvc/view/view.php?flag=<?php echo $_SESSION['flag'];?>" ><?php echo $lang->HOME?></a></li>
 				
-                <li id="nav-tour"><a a href="../requesthandler/method=faq"><?php echo $lang->FAQ?></a></li>
+                <li id="nav-tour"><a a href="http://localhost/Open/trunk/mvc/requesthandler/faq"><?php echo $lang->FAQ?></a></li>
 
 			</ul>
 		</nav>

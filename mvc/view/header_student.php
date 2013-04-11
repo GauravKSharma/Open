@@ -52,7 +52,7 @@ function home()
 	    <nav id="main-nav" class="two-thirds column omega">
 	      	<ul id="main-nav-menu" class="nav-menu">
 		        <li id="nav-home"><a href="#" onclick="home()"><?php echo $lang->HOME?></a></li>
-		        <li id="nav-tour"><a href="../controller/controller.php?method=sampleTest"><?php echo $lang->SAMPLETEST?></a></li>
+		        <li id="nav-tour"><a href="http://localhost/Open/trunk/mvc/requesthandler/sampleTest"><?php echo $lang->SAMPLETEST?></a></li>
 		        <li id="nav-support"><a href="#" onclick="viewResult()"><?php echo $lang->VIEWRESULT?></a></li>
 		        <li id="nav-prices"><a href="../controller/controller.php?method=faq"><?php echo $lang->FAQ?></a></li>
 		       

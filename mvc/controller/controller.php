@@ -572,16 +572,16 @@ $sampletest->setCategory($_REQUEST['cid']);
 
                  $changePassword->setPassword($_POST["new_pwd"]);
                  if ($changePassword->UpdatePassword()) {
-                     header("location:../view/changepassword.php");
+                     header("location:http://localhost/Open/trunk/mvc/view/changepassword.php");
                  }
               }
                else{
-               	header("location:../view/changepassword.php");
+               	header("location:http://localhost/Open/trunk/mvc/view/changepassword.php");
                }
             }
             else{
                 //echo "hi";die;
-            	header("location:../view/changepassword.php?msg='Wrong Entry'");
+            	header("location:http://localhost/Open/trunk/mvc/user/changepassword/msg/'Wrong Entry'");
             }
         } 
         
@@ -638,26 +638,31 @@ public function feedback() {
             $find = $login->FindUsers();
             
             if ($find) {
-                $_SESSION ['uname'] = $_POST ["u_name"];
+               
                 $result = array();
                 $result = $find;
                 //print_r ($result);die;
              
                
                 if ($result [0]['user_type'] == 2 && $_POST ['user_type'] == "teacher") {
+                     $_SESSION ['uname'] = $_POST ["u_name"];
                   header("location:http://localhost/Open/trunk/mvc/user/2");
                   } 
                 else if ($result [0]['user_type'] == 3 && $_POST ['user_type'] == "student") {
+                     $_SESSION ['uname'] = $_POST ["u_name"];
                     header("location:http://localhost/Open/trunk/mvc/user/3");
+                    
                 }
                 else if ($result [0]['user_type'] == 3 && $_POST ['type'] == "test") {
+                     $_SESSION ['uname'] = $_POST ["u_name"];
                     header("location:../view/testInstructions.php");
                 }
                 else {
                     if($_POST ['user_type'] == "student"){
                    header ( "location:http://localhost/Open/trunk/mvc/studentlogin" );}
                    
-                   else {
+                   else if($_POST ['user_type'] == "teacher"){
+//                       echo "hiii";die;
                      header ( "location:http://localhost/Open/trunk/mvc/teacherlogin" );}
             
                    }
